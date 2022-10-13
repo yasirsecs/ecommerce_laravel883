@@ -3,7 +3,7 @@
     Amazone
 @endpush
 @section('main-section')
-<!--main container comment by yasir-->
+<!--main container comment by yasir from laptop-->
 
 <div id="siteWrapper" class=" main-container p-5 bg-white w-full">
         <div class="mobile-navbar-top mb-5 lg:hidden">
