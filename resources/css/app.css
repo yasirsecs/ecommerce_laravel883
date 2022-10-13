@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwindcss aspect-ratio;
+
+
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.pt-font {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 700;
+}
+
+.text-shadow {
+  text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+/* sidebar menu*/
+.navbar-active-site-wrapper {
+  animation: navbar-active 0.5s  ease-in-out  /*cubic-bezier(0.34, 1.56, 0.64, 1)*/ ;
+  animation-fill-mode: forwards;
+  @apply fixed   h-screen overflow-y-hidden rounded-3xl lg:animate-none lg:overflow-scroll ;
+ 
+}
+ 
+.navbar-deactive-site-wrapper {
+  animation: navbar-deactive 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+  @apply fixed w-full h-screen  bg-white ;
+ 
+} 
+
+.active-navbar-body {
+  @apply overflow-y-hidden md:overflow-y-auto;
+}
+
+@keyframes navbar-active {
+  0% {
+      @apply left-0 top-0;
+  }
+  100% {
+      @apply left-72 rotate-6 top-10;
+      box-shadow: -30px 30px 5px rgba(255, 255, 255,0.3);
+  }
+}
+
+@keyframes navbar-deactive {
+  0% {
+      @apply left-72 rotate-6 top-10 rounded-3xl;
+      box-shadow: -30px 30px 5px rgba(255, 255, 255, 0.3);
+  }
+  100% {
+      @apply left-0 top-0  rounded-[0px];
+  }
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwindcss aspect-ratio;
+
+
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.pt-font {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 700;
+}
+
+.text-shadow {
+  text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+/* sidebar menu*/
+.navbar-active-site-wrapper {
+  animation: navbar-active 0.5s  ease-in-out  /*cubic-bezier(0.34, 1.56, 0.64, 1)*/ ;
+  animation-fill-mode: forwards;
+  @apply fixed   h-screen overflow-y-hidden rounded-3xl lg:animate-none lg:overflow-scroll ;
+ 
+}
+ 
+.navbar-deactive-site-wrapper {
+  animation: navbar-deactive 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+  @apply fixed w-full h-screen  bg-white ;
+ 
+} 
+
+.active-navbar-body {
+  @apply overflow-y-hidden md:overflow-y-auto;
+}
+
+@keyframes navbar-active {
+  0% {
+      @apply left-0 top-0;
+  }
+  100% {
+      @apply left-72 rotate-6 top-10;
+      box-shadow: -30px 30px 5px rgba(255, 255, 255,0.3);
+  }
+}
+
+@keyframes navbar-deactive {
+  0% {
+      @apply left-72 rotate-6 top-10 rounded-3xl;
+      box-shadow: -30px 30px 5px rgba(255, 255, 255, 0.3);
+  }
+  100% {
+      @apply left-0 top-0  rounded-[0px];
+  }
+}
