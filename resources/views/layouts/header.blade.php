@@ -78,11 +78,16 @@
         <!--top navbar rightside-->
         <div class="flex flex-col lg:flex-row lg:items-center cursor-pointer order-0 lg:order-1 mt-10 lg:mt-0">
           <div id="usersetting1" class="order-0 mt-4 lg:mt-0 lg:order-0 flex flex-col lg:flex-row lg:items-center  whitespace-nowrap lg:p-3    ">
-           <button id="dropdownDefault" onclick = "usersettingfunction()" 
-            class="text-white text-sm  text-center inline-flex items-center" type="button">  
-            <span class="block lg:hidden">Hello</span>Yasir arfatse
-           <!--  <img src="/images/yasir1.jpg" class=" order-0 lg:order-1 block rounded-full w-6 h-6  lg:w-6 px-2" alt="">  -->
-          </button>  
+            @if(false)
+              <button id="dropdownDefault" onclick = "usersettingfunction()" 
+              class="text-white text-sm  text-center inline-flex items-center" type="button">  
+              <span class="block lg:hidden">Hello</span>Yasir arfatse
+            <img src="/images/yasir1.jpg" class=" order-0 lg:order-1 block rounded-full w-6 h-6  lg:w-6 px-2" alt="">
+              </button>
+            @else
+            <a href="{{url('login')}}">Login</a>
+            @endif
+             
            </div>
            <!-- Dropdown menu -->
             <div id="usersetting2" class=" order-1  lg:absolute hidden lg:top-10 lg:right-20 w-32 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
