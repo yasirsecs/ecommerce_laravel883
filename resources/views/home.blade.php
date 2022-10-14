@@ -22,8 +22,8 @@
             </div>
            
             <div class="container mx-auto px-5 lg:px-0 flex item-center " style="background-image: {{ url('/images/addidas_shoe.jpg') }}">
-                <img src="{{asset('/images/addidas_shoe.jpg')}}" alt="Girl in a jacket" class=" w-1/2 h-1/2">
-                <img src="{{asset('/images/addidas_shoe.jpg')}}" alt="Girl in a jacket" class=" w-1/2 h-1/2">
+                <img src="{{asset('/images/adidas_front_page2.png')}}" alt="Girl in a jacket" class=" w-1/2 h-1/2">
+                <img src="{{asset('/images/adidas_front_page2.png')}}" alt="Girl in a jacket" class=" w-1/2 h-1/2">
             </div>
         </div>
   </div>
