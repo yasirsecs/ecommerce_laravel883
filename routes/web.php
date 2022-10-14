@@ -32,6 +32,9 @@ Route::get('/pcard5', function () {
 Route::get('/product', function () {
     return view('product-list');
 });
+Route::get('/product-women', function () {
+    return view('product-women');
+});
 Route::get('/landing', function () {
     return view('landing-front');
 });

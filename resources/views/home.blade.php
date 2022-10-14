@@ -3,7 +3,7 @@
     Amazone
 @endpush
 @section('main-section')
-<!--main container comment by yasir from laptop-->
+<!--main container -->
 
 <div id="siteWrapper" class=" main-container p-5 bg-white w-full">
         <div class="mobile-navbar-top mb-5 lg:hidden">
@@ -22,8 +22,8 @@
             </div>
            
             <div class="container mx-auto px-5 lg:px-0 flex item-center " style="background-image: {{ url('/images/addidas_shoe.jpg') }}">
-                <img src="{{asset('/images/addidas_shoe.jpg')}}" alt="Girl in a jacket" class=" w-1/2 h-1/2">
-                <img src="{{asset('/images/addidas_shoe.jpg')}}" alt="Girl in a jacket" class=" w-1/2 h-1/2">
+                <img src="{{asset('/images/adidas_front_page2.png')}}" alt="Girl in a jacket" class=" w-full h-full">
+                {{-- <img src="{{asset('/images/adidas_front_page2.png')}}" alt="Girl in a jacket" class=" w-1/2 h-1/2"> --}}
             </div>
         </div>
   </div>
