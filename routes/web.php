@@ -13,6 +13,9 @@ Route::get('/login', function () {
 Route::get('/pcard', function () {
     return view('pcard');
 });
+Route::get('/pcard1', function () {
+    return view('pcard1');
+});
 Route::get('/amir', function () {
     return view('amir');
 });
@@ -29,6 +32,10 @@ Route::get('/pcard4', function () {
 Route::get('/pcard5', function () {
     return view('pcard5');
 });
+Route::get('/pcard6', function () {
+    return view('pcard6');
+});
+
 Route::get('/product', function () {
     return view('product-list');
 });

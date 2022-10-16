@@ -22,6 +22,7 @@
 }
         </style>
     @vite('resources/css/app.css')
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body class="h-full">
    <!-- This example requires Tailwind CSS v2.0+ -->
@@ -48,8 +49,8 @@
     ],
   }
   ```
-{{-- -->lllllllllllllllllllllllllllllllllllllllllll --}}
-<!-- This example requires Tailwind CSS v2.0+ -->
+{{-- start of cart here--}}
+<!-- start of cart hereThis example requires Tailwind CSS v2.0+ -->
 <div class="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
   <!--
     Background backdrop, show/hide based on slide-over state.
@@ -63,7 +64,7 @@
   -->
   <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity "></div>
 
-  <div class="fixed inset-0 overflow-hidden">
+   <div class="fixed inset-0 overflow-hidden">
     <div class="absolute inset-0 overflow-hidden">
       <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
         <!--
@@ -76,7 +77,7 @@
             From: "translate-x-0"
             To: "translate-x-full"
         -->
-        <div class="pointer-events-auto w-screen max-w-md">
+         <div class="pointer-events-auto w-screen max-w-md">
           <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
             <div class="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
               <div class="flex items-start justify-between">
@@ -171,12 +172,12 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> 
       </div>
     </div>
-  </div>
+  </div> 
 </div>
-{{-- hhhhhhhhhhhhhhhh --}}
+{{-- end of cart --}}
 
 <div class="bg-white">
     <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">

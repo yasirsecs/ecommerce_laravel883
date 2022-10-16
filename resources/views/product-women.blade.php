@@ -83,7 +83,7 @@ Product Categories
        <!-- product -->
        <!-- product -->
       <div class="productinfo border rounded">
-        <div class="productimage h-48 bg-yellow-300"><img src="{{asset('/images/shoe5.png')}}" alt="Girl in a jacket" class=" w-full h-3/4"></div>
+        <div class="productimage h-48 bg-yellow-300"><a href="{{url('pcard')}}"<img src="{{asset('/images/shoe5.png')}}" alt="Girl in a jacket" class=" w-full h-3/4"></div>
         <div class="productinfo p-3 space-y-px">
           <div class="p-heighlight text-red-200 font-semibold">New</div>
           <div class="p-title font-semibold text-lg text-theme-black">Book</div>

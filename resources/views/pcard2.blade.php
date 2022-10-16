@@ -10,7 +10,8 @@
             text-shadow:5px 5px 1px rgb(0 0 0 / 10%)
         }
         </style>
-    @vite('resources/css/app.css')
+    {{-- @vite('resources/css/app.css') --}}
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body class="h-screen bg-gradient bg-gradient-to-br from-theme-blue to-theme-pink flex items-center justify-center">
 <div class="container flex justify-center lg:h-3/4">

@@ -11,6 +11,7 @@
     <script src="{{asset('/js/sidebar.js')}}" defer></script>
     {{-- <script src="{{asset('/js/usersetting.js')}}"></script> --}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+   {{--  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" /> --}}
    </head>
 <body>
 <div class="hidden lg:block  main-navbar  bg-theme-black h-screen lg:h-auto text-gray-100 w-full  left-0 top-0 py-6 lg:py-0">
