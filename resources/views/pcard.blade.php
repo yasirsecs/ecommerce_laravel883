@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    @vite('resources/css/app.css')
+   {{--  @vite('resources/css/app.css') --}}
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body class="h-screen bg-gradient bg-gradient-to-br from-theme-blue to-theme-pink flex items-center justify-center">
 <div class="container mx-auto px-4">

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  @vite('resources/css/app.css')
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <section class="h-screen">
@@ -14,11 +14,13 @@
             <div
               class="grow-0 shrink-1 md:shrink-0 basis-auto xl:w-6/12 lg:w-6/12 md:w-9/12 mb-12 md:mb-0"
             >
+            <a href="{{url('home')}}">
               <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                src="{{asset('images/login.png')}}"
                 class="w-full"
                 alt="Sample image"
               />
+            </a>
             </div>
             <div class="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0">
               <form>

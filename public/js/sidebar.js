@@ -42,5 +42,18 @@ function myFunction() {
 
 window.usersettingfunction = usersettingfunction;
 window.myFunction = myFunction;
+var cartdiv = document.getElementById("cartdiv");
+var cartbutton = document.getElementById("cartbutton");
+cartbutton.addEventListener('click', function () {
+  document.getElementById("cartdiv").classList.remove('visible');
+  document.getElementById("cartdiv").classList.add('opacity-0'); //removeDeactiveClass();
+});
+
+function removecartClass() {
+  setTimeout(function () {
+    site.classList.remove('translate-x-0');
+    mobileNavbar.classList.add('hidden');
+  }, 500);
+}
 /******/ })()
 ;

@@ -19,6 +19,7 @@
         background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
       }
     </style>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   </head>
   <body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
     <!--Nav-->

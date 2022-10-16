@@ -42,6 +42,25 @@ function removeDeactiveClass () {
   window.myFunction = myFunction;
 
 
+    const cartdiv = document.getElementById("cartdiv");
+    const cartbutton = document.getElementById("cartbutton");
+    cartbutton.addEventListener('click', function() {
+        document.getElementById("cartdiv").classList.remove('visible');
+        document.getElementById("cartdiv").classList.add('opacity-0');
+        //removeDeactiveClass();
+});
+
+function removecartClass () {
+  setTimeout(() => {
+      site.classList.remove('translate-x-0')
+      mobileNavbar.classList.add('hidden')
+}, 500);
+}  
+     
+      
+
+
+
 
 
 

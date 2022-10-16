@@ -11,6 +11,7 @@
         }
         </style>
     @vite('resources/css/app.css')
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body class="h-screen bg-gradient bg-gradient-to-br from-theme-blue to-theme-pink flex items-center justify-center">
 <div class="container flex justify-center lg:h-3/4 bg-yellow-400">
