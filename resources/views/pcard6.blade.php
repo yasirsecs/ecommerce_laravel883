@@ -10,25 +10,25 @@
                 <div class="  px-5 lg:px-0 flex flex-col lg:flex-row item-center justify-center p-8 border border-cyan-200" >
                   
                     <div class="lg:w-1/3 item-images flex flex-col w-full bg-green border rounded-md ">
-                      <div class="large-image-view w-full   ">
+                      <div class="large-image-view w-full py-5   ">
                         <a href="#">
                         <img class=" object-center" src="{{asset('images/shoe2.png')}}" alt="product image">
                         </a>
                       </div>
-                      <div class="large-image-list flex justify-center h-10 bg-slate-600">
+                      <div class="small-image-list flex justify-center h-10 ">
                          <div class="small-imagesborder shrink  border border-gray-500 rounded-xl items-center w-12 h-10 "><a href="#">
                           <img class="rounded-xl" src="{{asset('images/shoe2.png')}}" alt="product image">
                           </a>
                         </div>
-                        <div class="small-imagesborder shrink border border-gray-500 rounded-xl items-center w-12 h-10 "><a href="#">
+                        <div class="small-imagesborder shrink border border-gray-500 rounded-xl items-center w-12 h-10  border-solid"><a href="#">
                           <img class="rounded-xl" src="{{asset('images/shoe2.png')}}" alt="product image">
                           </a>
                         </div>
-                        <div class="small-imagesborder shrink border border-gray-500 rounded-xl items-center w-12 h-10 "><a href="#">
+                        <div class="small-imagesborder shrink border border-gray-500 rounded-xl items-center w-12 h-10 border-solid"><a href="#">
                           <img class="rounded-xl" src="{{asset('images/shoe2.png')}}" alt="product image">
                           </a>
                         </div>
-                        <div class="small-imagesborder shrink border border-gray-500 rounded-xl items-center w-12 h-10 "><a href="#">
+                        <div class="small-imagesborder shrink border border-gray-500 rounded-xl items-center w-12 h-10 border-solid "><a href="#">
                           <img class="rounded-xl" src="{{asset('images/shoe2.png')}}" alt="product image">
                           </a>
                         </div>
@@ -85,7 +85,7 @@
                     <!-- second card-->
                     
                     <!--   shoping cart start here --> 
-                    <div class="lg:w-1/4  rounded-lg dark:bg-gray-800 dark:border-gray-700 border p-5 bg-blue-600 ">
+                    <div class="lg:w-1/4  rounded-lg dark:bg-gray-800 dark:border-gray-700 border p-5 ">
                       <div class="px-5 pb-5">
                         <a href="#">
                             <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">SLEEK TRAINERS INSPIRED BY RUNNING TECHNOLOGY.</h5>
