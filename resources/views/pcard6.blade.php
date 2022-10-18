@@ -15,23 +15,42 @@
                             <img class=" " src="{{asset('images/shoe2.png')}}" alt="product image">
                             </a>
                           </div>
-                          <div class="large-image-list grid grid-cols-4 w-full h-1/5  ">
+                          <div class="large-image-list grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full h-1/5 justify-center">
                              <div class="small-imagesborder border border-gray-500 rounded-xl items-center "><a href="#">
-                              <img class=" p-1 object-cover" src="{{asset('images/shoe2.png')}}" alt="product image">
+                              <img class=" p-1 w-12 h-12" src="{{asset('images/shoe2.png')}}" alt="product image">
                               </a>
                             </div>
                             <div class="small-imagesborder border border-gray-500 rounded-xl "><a href="#">
-                              <img class="p-1 object-contain" src="{{asset('images/shoe2.png')}}" alt="product image">
+                              <img class="p-1 w-12 h-12 " src="{{asset('images/shoe2.png')}}" alt="product image">
                               </a>
                             </div>
                             <div class="small-imagesborder border border-gray-500 rounded-xl ">
-                              <img class="p-1 object-fill" src="{{asset('images/shoe2.png')}}" alt="product image">
+                              <img class="p-1 w-12 h-12" src="{{asset('images/shoe2.png')}}" alt="product image">
                             </div>
                            <div class="small-imagesborder border border-gray-500 rounded-xl "><a href="#">
-                              <img class="p-1 object-scale-down" src="{{asset('images/shoe2.png')}}" alt="product image">
+                              <img class="p-1 w-12 h-12 " src="{{asset('images/shoe2.png')}}" alt="product image">
+                              </a>
+                           </div>
+                          
+                          </div>
+                          {{-- <div class="large-image-list grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full h-1/5 justify-center">
+                             <div class="small-imagesborder border border-gray-500 rounded-xl items-center "><a href="#">
+                              <img class=" p-1 w-12 h-12" src="{{asset('images/shoe2.png')}}" alt="product image">
                               </a>
                             </div>
-                          </div>
+                            <div class="small-imagesborder border border-gray-500 rounded-xl "><a href="#">
+                              <img class="p-1 w-12 h-12 " src="{{asset('images/shoe2.png')}}" alt="product image">
+                              </a>
+                            </div>
+                            <div class="small-imagesborder border border-gray-500 rounded-xl ">
+                              <img class="p-1 w-12 h-12" src="{{asset('images/shoe2.png')}}" alt="product image">
+                            </div>
+                           <div class="small-imagesborder border border-gray-500 rounded-xl "><a href="#">
+                              <img class="p-1 w-12 h-12 " src="{{asset('images/shoe2.png')}}" alt="product image">
+                              </a>
+                           </div>
+                          
+                          </div> --}}
                         </div>    
                     </div>
                     <!-- second card-->
