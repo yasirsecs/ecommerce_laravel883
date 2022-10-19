@@ -661,6 +661,12 @@ video {
 .bottom-\[50px\] {
   bottom: 50px;
 }
+.right-5 {
+  right: 1.25rem;
+}
+.top-1 {
+  top: 0.25rem;
+}
 .z-10 {
   z-index: 10;
 }
@@ -2082,7 +2088,9 @@ body {
     animation-fill-mode: forwards;
     position: absolute;
     right: 0px;
+    top: 2.5rem;
     max-width: 24rem;
+    border-radius: 0.5rem;
     --tw-border-opacity: 1;
     border-color: rgb(209 213 219 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
@@ -2093,15 +2101,31 @@ body {
 @keyframes cart-active {
   0% {
     right: 0px;
-    top: 0px;
-    height: 0px;
+    width: 0px;
   }
   100% {
-    top: 2.5rem;
-    height: 75%;
+    width: 50%;
     --tw-bg-opacity: 1;
-    background-color: rgb(71 85 105 / var(--tw-bg-opacity));
-      box-shadow: -30px 30px 5px rgba(255, 255, 255,0.3);
+    background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+  }
+}
+
+/*cart css*/
+
+.cart-active1
+  {
+    animation: cart-active1   0.5s  ease-in-out   ;
+   animation-fill-mode: backwards; 
+   
+  }
+
+
+@keyframes cart-active1 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 

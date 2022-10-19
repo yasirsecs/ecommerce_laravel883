@@ -77,13 +77,13 @@
             From: "translate-x-0"
             To: "translate-x-full"
         -->
-         <div class="pointer-events-auto w-screen max-w-md">
+         <div id="cart1" class="pointer-events-auto w-screen max-w-md">
           <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
             <div class="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
               <div class="flex items-start justify-between">
                 <h2 class="text-lg font-medium text-gray-900" id="slide-over-title">Shopping cart</h2>
                 <div class="ml-3 flex h-7 items-center">
-                  <button type="button" class="-m-2 p-2 text-gray-400 hover:text-gray-500">
+                  <button type="button" onclick='showcart()' class="-m-2 p-2 text-gray-400 hover:text-gray-500">
                     <span class="sr-only">Close panel</span>
                     <!-- Heroicon name: outline/x-mark -->
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -93,7 +93,7 @@
                 </div>
               </div>
 
-              <div class="mt-8">
+              <div  class="mt-8">
                 <div class="flow-root">
                   <ul role="list" class="-my-6 divide-y divide-gray-200">
                     <li class="flex py-6">
@@ -182,7 +182,11 @@
 <div class="bg-white">
     <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
       <h2 class="text-2xl font-bold tracking-tight text-gray-900">Customers also purchased</h2>
-  
+      <button id="burgerButton" onclick='showcart()' class="burger absolute right-5 top-1 text-gray-700 rounded-lg bg-gray-100 hover:bg-gray-200 p-2">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+        </svg>
+      </button> 
       <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
         <div class="group relative">
           <div class="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
@@ -325,6 +329,26 @@
       </div>
     </div>
   </div>
-  
+                     
+<script>
+  function showcart() 
+{
+	var text = document.getElementById('cart1');
+  /* text.classList.toggle('hidden'); */
+	text.classList.add('cart-active1');
+}
+function showcart1() 
+{
+	var text = document.getElementById('cart1');
+  /* text.classList.toggle('hidden'); */
+	text.classList.add('cart-active1');
+}
+
+function hidecart() {
+	var text = document.getElementById('text');
+	text.classList.remove('show');
+	text.classList.add('hidden');
+}
+</script> 
 </body>
 </html>
