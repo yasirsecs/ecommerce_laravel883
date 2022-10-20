@@ -538,6 +538,23 @@ video {
     max-width: 1536px;
   }
 }
+.aspect-w-1 {
+  position: relative;
+  padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+  --tw-aspect-w: 1;
+}
+.aspect-w-1 > * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.aspect-h-1 {
+  --tw-aspect-h: 1;
+}
 .sr-only {
   position: absolute;
   width: 1px;
@@ -1466,6 +1483,18 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(71 85 105 / var(--tw-bg-opacity));
 }
+.bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+.bg-yellow-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 240 138 / var(--tw-bg-opacity));
+}
+.bg-slate-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
+}
 .bg-opacity-75 {
   --tw-bg-opacity: 0.75;
 }
@@ -2115,7 +2144,7 @@ body {
 .cart-active1
   {
     animation: cart-active1   0.5s  ease-in-out   ;
-   animation-fill-mode: backwards; 
+   animation-fill-mode: forwards; 
    
   }
 
@@ -3029,6 +3058,21 @@ body {
 
 
 @media (min-width: 1024px) {
+
+  .lg\:aspect-none {
+    position: static;
+    padding-bottom: 0;
+  }
+
+  .lg\:aspect-none > * {
+    position: static;
+    height: auto;
+    width: auto;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
 
   .lg\:absolute {
     position: absolute;

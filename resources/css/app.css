@@ -82,7 +82,7 @@ body {
 .cart-active1
   {
     animation: cart-active1   0.5s  ease-in-out   ;
-   animation-fill-mode: backwards; 
+   animation-fill-mode: forwards; 
    
   }
 
