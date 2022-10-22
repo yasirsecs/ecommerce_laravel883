@@ -78,8 +78,29 @@ body {
 }
 
 /*cart css*/
+/* sidebar menu*/
+.cart-main-active
+  {
+    animation: cart-main-active 0.5s  ease-in-out  /*cubic-bezier(0.34, 1.56, 0.64, 1)*/ ;
+    animation-fill-mode: forwards;
+    
+  }
 
-.cart-active1
+
+@keyframes cart-main-active {
+  0% {
+      @apply opacity-0 ;
+  }
+  100% {
+      @apply opacity-100;
+      
+  }
+}
+
+/*cart css*/
+
+
+.cart-main-deactive1
   {
     animation: cart-active1   0.5s  ease-in-out   ;
    animation-fill-mode: forwards; 
@@ -87,7 +108,7 @@ body {
   }
 
 
-@keyframes cart-active1 {
+@keyframes cart-main-deactive1 {
   0% {
       @apply opacity-100 ;
   }
@@ -96,3 +117,44 @@ body {
       
   }
 }
+
+/*cart2 css*/
+
+.cart-list-deactive
+  {
+    animation: cart-list-deactive   0.5s  ease-in-out   ;
+   animation-fill-mode: forwards; 
+   @apply transform transition ;
+   
+  }
+
+
+@keyframes cart-list-deactive {
+  0% {
+      @apply translate-x-full ;
+  }
+  100% {
+      @apply translate-x-0;
+      
+  }
+}
+
+.cart-list-active
+  {
+   animation: cart-list-active   0.5s  ease-in-out   ;
+   animation-fill-mode: forwards; 
+   @apply transform transition  ;
+   
+  }
+
+
+@keyframes cart-list-active {
+  0% {
+      @apply translate-x-0 ;
+  }
+  100% {
+      @apply translate-x-full;
+      
+  }
+}
+

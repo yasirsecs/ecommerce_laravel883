@@ -684,6 +684,9 @@ video {
 .top-1 {
   top: 0.25rem;
 }
+.right-3 {
+  right: 0.75rem;
+}
 .z-10 {
   z-index: 10;
 }
@@ -1483,18 +1486,6 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(71 85 105 / var(--tw-bg-opacity));
 }
-.bg-red-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
-}
-.bg-yellow-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 240 138 / var(--tw-bg-opacity));
-}
-.bg-slate-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
-}
 .bg-opacity-75 {
   --tw-bg-opacity: 0.75;
 }
@@ -2140,8 +2131,28 @@ body {
 }
 
 /*cart css*/
+/* sidebar menu*/
+.cart-main-active
+  {
+    animation: cart-main-active 0.5s  ease-in-out  /*cubic-bezier(0.34, 1.56, 0.64, 1)*/ ;
+    animation-fill-mode: forwards;
+    
+  }
 
-.cart-active1
+
+@keyframes cart-main-active {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*cart css*/
+
+
+.cart-main-deactive1
   {
     animation: cart-active1   0.5s  ease-in-out   ;
    animation-fill-mode: forwards; 
@@ -2149,12 +2160,64 @@ body {
   }
 
 
-@keyframes cart-active1 {
+@keyframes cart-main-deactive1 {
   0% {
     opacity: 1;
   }
   100% {
     opacity: 0;
+  }
+}
+
+/*cart2 css*/
+
+.cart-list-deactive
+  {
+    animation: cart-list-deactive   0.5s  ease-in-out   ;
+   animation-fill-mode: forwards;
+   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+   transition-duration: 150ms;
+   
+  }
+
+
+@keyframes cart-list-deactive {
+  0% {
+    --tw-translate-x: 100%;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+  100% {
+    --tw-translate-x: 0px;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+}
+
+.cart-list-active
+  {
+   animation: cart-list-active   0.5s  ease-in-out   ;
+   animation-fill-mode: forwards;
+   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+   transition-duration: 150ms;
+   
+  }
+
+
+@keyframes cart-list-active {
+  0% {
+    --tw-translate-x: 0px;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+  100% {
+    --tw-translate-x: 100%;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 }
 
@@ -3384,4 +3447,5 @@ body {
     width: 100%;
   }
 }
+
 

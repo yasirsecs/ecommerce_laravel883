@@ -1,7 +1,7 @@
-/* function myFunction() {
+function myFunction() {
     document.getElementById("demo").innerHTML = "Hello World";
   }
- */
+
   document.getElementById("myBtn").addEventListener("click", displayDate);
   
   function displayDate() {

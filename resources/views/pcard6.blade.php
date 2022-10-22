@@ -119,11 +119,16 @@
                     </div>
                      <!--   shoping cart end here --> 
                     <!--   shoping cart start here --> 
-                       <button id="burgerButton" onclick='showcart1()' class="burger absolute right-5 top-1 text-gray-700 rounded-lg bg-gray-100 hover:bg-gray-200 p-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                        </svg>
-                      </button>         
+                    <div class="cart absolute right-5 top-1 flex"><button id="burgerButton" onclick='showcart1()' class="burger   rounded-lg hover:bg-gray-300 p-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                      </svg>
+                      
+                    </button>
+                    <div class="rounded-full w-4 h-4 text-red-600 text-lg absolute  right-3 font-bold">4</div>
+                  </div>
+                    
+                                
                       {{-- <div id="cart1" class="shoping-cart hidden ">
                         
                         <div class="shoping-cart-list flex flex-col items-center justify-center">
@@ -139,7 +144,7 @@
                     <!--   shoping cart end here -->
                     {{-- start of cart here--}}
 <!-- start of cart here This example requires Tailwind CSS v2.0+ -->
-<div id="cart1" class="relative z-10 bg-red" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+<div id="cart1" class="relative z-10 bg-red hidden " aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
   <!--
     Background backdrop, show/hide based on slide-over state.
 
@@ -150,11 +155,11 @@
       From: "opacity-100"
       To: "opacity-0"
   -->
-  <div class="fixed inset-0 bg-red-500 bg-opacity-75 transition-opacity "></div>
+  <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity "></div>
 
-   <div  class="fixed inset-0 overflow-hidden bg-black">
-    <div class="absolute inset-0 overflow-hidden bg-green-300">
-      <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10 bg-yellow-200">
+   <div  class="fixed inset-0 overflow-hidden ">
+    <div class="absolute inset-0 overflow-hidden ">
+      <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10 ">
         <!--
           Slide-over panel, show/hide based on slide-over state.
 
@@ -165,13 +170,13 @@
             From: "translate-x-0"
             To: "translate-x-full"
         -->
-         <div  class="pointer-events-auto w-screen max-w-md bg-slate-400 transform transition ease-in-out duration-500 sm:duration-700">
-          <div class="flex h-full flex-col overflow-y-scroll bg-blue-300 shadow-xl">
+         <div id="cart2"  class="pointer-events-auto w-screen max-w-md  ">
+          <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
             <div class="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
               <div class="flex items-start justify-between">
                 <h2 class="text-lg font-medium text-gray-900" id="slide-over-title">Shopping cart</h2>
                 <div class="ml-3 flex h-7 items-center">
-                  <button type="button" onclick='showcart()' class="-m-2 p-2 text-gray-400 hover:text-gray-500">
+                  <button type="button" onclick='hidecart()' class="-m-2 p-2 text-gray-400 hover:text-gray-500">
                     <span class="sr-only">Close panel</span>
                     <!-- Heroicon name: outline/x-mark -->
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -278,16 +283,21 @@
 }
 function showcart1() 
 {
-	var text = document.getElementById('cart1');
-  text.classList.remove('hidden');
-  text.classList.add('visible');
-	text.classList.add('cart-active');
+	var maincart1 = document.getElementById('cart1');
+  var cartlist1 = document.getElementById('cart2');
+  maincart1.classList.remove('hidden');
+  maincart1.classList.add('visible');
+	maincart1.classList.add('cart-main-active');
+  //cartlist1.classList.add('cart-list-active')
 }
 
 function hidecart() {
-	var text = document.getElementById('text');
-	text.classList.remove('show');
-	text.classList.add('hidden');
+	var maincart1 = document.getElementById('cart1');
+  var cartlist1 = document.getElementById('cart2');
+  maincart1.classList.remove('visible');
+  maincart1.classList.add('hidden');
+	maincart1.classList.add('cart-main-deactive');
+  cartlist1.classList.add('cart-list-deactive')
 }
 </script> 
                 </div> 
