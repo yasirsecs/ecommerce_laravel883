@@ -17271,10 +17271,19 @@ var __webpack_exports__ = {};
 /*!******************************!*\
   !*** ./resources/js/cart.js ***!
   \******************************/
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var _require = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js"),
     takeRight = _require.takeRight;
 
-var carts = document.querySelectorAll('add-cart');
+var carts = document.querySelectorAll('.add-cart');
+console.log(carts[1]);
 var products = [{
   name: 'Grey Tshirt',
   tag: 'greytshirt',
@@ -17301,7 +17310,8 @@ console.log("running");
 var _loop = function _loop(i) {
   carts[i].addEventListener('click', function () {
     cartnumbers(products[i]);
-    console.log(products[i].name);
+    totalCost(products[i]);
+    console.log("Add eventlistener called");
   });
 };
 
@@ -17317,14 +17327,15 @@ function onLoadCartNumbers() {
   }
 }
 
-function cartNumbers(product) {
+function cartnumbers(product) {
   var productNumbers = localStorage.getItem('cartNumbers');
   productNumbers = parseInt(productNumbers);
 
   if (productNumbers) {
     localStorage.setItem('cartNumbers', productNumbers + 1);
+    document.querySelector('.cart span').textContent = productNumbers + 1;
   } else {
-    localStorage.setItem('cartNumbers,1');
+    localStorage.setItem('cartNumbers', 1);
     document.querySelector('.cart span').textContent = 1;
   }
 
@@ -17333,7 +17344,55 @@ function cartNumbers(product) {
 
 console.log('running2');
 
-function setItems(product) {}
+function setItems(product) {
+  var cartItems = localStorage.getItem('productInCart');
+  cartItems = JSON.parse(cartItems);
+  /* console.log("cartitem="+cartItems[product.tag]); */
+
+  if (cartItems != null) {
+    if (cartItems[product.tag] == undefined) {
+      cartItems = _objectSpread(_objectSpread({}, cartItems), {}, _defineProperty({}, product.tag, product));
+    }
+
+    cartItems[product.tag].inCart += 1;
+  } else {
+    product.inCart = 1;
+    cartItems = _defineProperty({}, product.tag, product);
+  }
+
+  localStorage.setItem("productInCart", JSON.stringify(cartItems));
+}
+
+function totalCost(product) {
+  var cartCost = localStorage.getItem('totalCost');
+  console.log("my cartCost is ", cartCost);
+  console.log(_typeof(cartCost));
+
+  if (cartCost != null) {
+    cartCost = parseInt(cartCost);
+    localStorage.setItem("totalCost", cartCost + product.price);
+  } else {
+    localStorage.setItem("totalCost", product.price);
+  }
+}
+
+function displayCart() {
+  var cartItems = localStorage.getItem("productInCart");
+  cartItems = JSON.parse(cartItems);
+  var productContainer = document.querySelector(".product");
+  console.log("in display cart function=" + cartItems.va);
+
+  if (cartItems && productContainer) {
+    productContainer.innerHTML = '';
+    Object.values(cartItems).map(function (item) {
+      productContainer.innerHTML += 'div class="product"><img src="./images/${item.tag}.jpg"></img><span>${item.name}</span> </div><div class="price">$${item.price},00</div><div class="quantity"><span>${item.inCart}</span></div><div class="total">$${item.inCart*item.price},00</div>';
+      productContainer.innerHTML += '<div class="basketTotalContainer"><h4 class="basketTotalTitle">Basket Total</h4><h4 class="basketTotal">$${cartCost},00</h4>';
+    });
+  }
+}
+
+onLoadCartNumbers();
+displayCart();
 })();
 
 /******/ })()
