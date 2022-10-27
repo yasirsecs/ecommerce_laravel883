@@ -4,54 +4,121 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <script src="{{asset('/js/cart.js')}}" defer></script>
  {{--  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" /> --}}
- <style>
-  body {
-      text-align: center;
-        
-      padding: 5%;
-  }
-  h1{
-      color:green;
-  }
-
-  .text {
-	text-align: center;
-}
-.hidden {
-	display: none;
-}
-.show {
-	display: block;
-}
-</style>
+ 
  
 </head>
 <body class=" h-screen">
-  <button onclick='showcart()'> Show Text </button>
-<p id="text" class="text hidden">This is the magic text</p>
-<button onclick='hidecart()'> hide text Text </button>
+  <style>
 
- {{-- <button id="burgerButton" onclick='showcart()' class="burger absolute right-5 top-1 text-gray-700 rounded-lg bg-gray-100 hover:bg-gray-200 p-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                        </svg>
-                      </button>    --}}
+    
+    
+    </style>
+    
+    <body>
+      <div class="cart ">
+       total item in Cart= <span class="span"></span>
+      </div>
+      <div  class="flex ">
+        <div id="pid-0" class="image">
+          <img src="/images/shoe5.png" alt="thshirt">
+          <h3>Black Tshirt</h3>
+          <h3>$10</h3>
+          <p class="tag">blacktshirt</p>
+          <a class="add-cart cart3 " href="#" >Add Cart</a>
+        </div>
+        <div id="pid-1" class="image">
+          <img src="/images/shoe5.png" alt="thshirt">
+          <h3>Blue Tshirt</h3>
+          <h3>$10</h3>
+          <p>bluetshirt</p>
+          <a class="add-cart cart3 " href="#" >Add Cart</a>
+        </div>
+      
+        <div id="pid-2" class="image ">
+          <img src="/images/shoe5.png" alt="thshirt">
+          <h3>Yellow Tshirt</h3>
+          <h3>$20</h3>
+          <p>yellowtshirt</p>
+          <a class="add-cart cart3" href="#" >Add Cart</a>
+        </div>
 
+        <div id="pid-3" class="image ">
+          <img src="/images/shoe5.png" alt="thshirt">
+          <h3>greed Tshirt</h3>
+          <h3>$25</h3>
+          <p>greentshirt</p>
+          <a class="add-cart cart3" href="#" >Add Cart</a>
+        </div>
+        <div id="pid-4" class="image ">
+          <img src="/images/shoe5.png" alt="thshirt">
+          <h3>Red Tshirt</h3>
+          <h3>$25</h3>
+          <p>redtshirt</p>
+          <a class="add-cart cart3" href="#" >Add Cart</a>
+        </div>
+    </div>
+    
 
+    <div class="products-container">
+      <div class="product-header">
+        <h5 class="product-title" >Product</h5>
+        <h5 class="price" >Price</h5>
+        <h5 class="quantity" >Quantity</h5>
+        <h5 class="total" >Total</h5>
+      </div>
+      <div class="product">
 
-<script>
-  function showcart() {
-	var text = document.getElementById('text');
-	text.classList.toggle('hidden');
+      </div>
+    </div>
+{{-- 
+    <h2>Get Children of this HTML Element using JavaScript</h2>
+    <div id="myElement">
+      <p>Hello <span>World</span>!</p>
+      <ul><li>List Item</li></ul>
+      <div>Sample World</div>
+      <img src="/images/shoe5.png" alt="thshirt">
+      <h3>Black Tshirt</h3>
+          <h3>$20,00</h3>
+          <a class=" cart3" href="#" >Add Cart</a>
+    </div>
+    <br>
+    <button type="button" onclick="execute()">Click Me</button>
+    <p id="out"></p> --}}
+    <script>
+       
+   /*  function execute(){
+        var element = document.getElementById('myElement');
+        var children = element.children;
+        document.getElementById('out').innerHTML = children.length + " children of #myElement."+"text of first child="+children[0];
+        console.log("text of element =",children[0].innerText);
+        console.log("number child of script2 =",children.length);
+    } */
+    </script>
+</body>
+    </body>
 
-}
+        <script>
 
-function hidecart() {
-	var text = document.getElementById('text');
-	text.classList.remove('show');
-	text.classList.add('hidden');
-}
-</script>
+          function showcart() 
+        {
+          var text = document.getElementById('cart1');
+          /* text.classList.toggle('hidden'); */
+          text.classList.add('cart-active1');
+        }
+        function showcart1() 
+        {
+          var text = document.getElementById('cart1');
+          /* text.classList.toggle('hidden'); */
+          text.classList.add('cart-active1');
+        }
+        
+        function hidecart() {
+          var text = document.getElementById('text');
+          text.classList.remove('show');
+          text.classList.add('hidden');
+        }
+        </script> 
 </body>
 </html>

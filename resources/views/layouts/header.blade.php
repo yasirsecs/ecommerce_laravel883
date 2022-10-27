@@ -9,6 +9,7 @@
     @vite('resources/js/script1.js')  --}}
     <script src="{{asset('/js/app.js')}}"></script>
     <script src="{{asset('/js/sidebar.js')}}" defer></script>
+    <script src="{{asset('/js/cart.js')}}" defer></script>
     {{-- <script src="{{asset('/js/usersetting.js')}}"></script> --}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
    {{--  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" /> --}}

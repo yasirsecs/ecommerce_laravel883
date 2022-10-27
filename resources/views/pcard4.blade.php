@@ -21,7 +21,7 @@
   height: 100px;
 }
         </style>
-    @vite('resources/css/app.css')
+ {{--    @vite('resources/css/app.css') --}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body class="h-full">
@@ -50,8 +50,8 @@
   }
   ```
 {{-- start of cart here--}}
-<!-- start of cart hereThis example requires Tailwind CSS v2.0+ -->
-<div class="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+<!-- start of cart here This example requires Tailwind CSS v2.0+ -->
+<div id="cart1" class="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
   <!--
     Background backdrop, show/hide based on slide-over state.
 
@@ -64,7 +64,7 @@
   -->
   <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity "></div>
 
-   <div class="fixed inset-0 overflow-hidden">
+   <div  class="fixed inset-0 overflow-hidden">
     <div class="absolute inset-0 overflow-hidden">
       <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
         <!--
@@ -77,7 +77,7 @@
             From: "translate-x-0"
             To: "translate-x-full"
         -->
-         <div id="cart1" class="pointer-events-auto w-screen max-w-md">
+         <div  class="pointer-events-auto w-screen max-w-md">
           <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
             <div class="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
               <div class="flex items-start justify-between">
@@ -120,6 +120,8 @@
                         </div>
                       </div>
                     </li>
+
+                    
 
                     <li class="flex py-6">
                       <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
