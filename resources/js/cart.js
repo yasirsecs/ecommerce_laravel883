@@ -1,42 +1,125 @@
 const { takeRight } = require("lodash");
 
 let carts=document.querySelectorAll('.add-cart');
-console.log(carts[1]);
+/* console.log(carts[1]); */
 let products=[
     {
-        name:'Grey Tshirt',
-        tag:'greytshirt',
-        price:15,
+        name:'.',
+        tag:'.',
+        img:'a',
+        price:0,
         inCart:0
     },
     {
-        name:'Grey hoddie',
-        tag:'greyhoddie',
-        price:20,
+        name:'.',
+        tag:'.',
+        img:'a',
+        price:0,
         inCart:0
     },
     {
-        name:'Black Tshirt',
-        tag:'blacktshirt',
-        price:10,
+        name:'.',
+        tag:'.',
+        img:'a',
+        price:0,
         inCart:0
     },
     {
-        name:'Black Hoddie',
-        tag:'blackhoddie',
-        price:25,
+        name:'.',
+        tag:'.',
+        img:'a',
+        price:0,
         inCart:0
+    },
+    {
+        name:'.',
+        tag:'.',
+        img:'a',
+        price:0,
+        inCart:0
+    },
+    {
+        name:'.',
+        tag:'.',
+        img:'a',
+        price:0,
+        inCart:0
+    },
+    {
+        name:'.',
+        tag:'.',
+        img:'a',
+        price:0,
+        inCart:0
+    },
+    {
+        name:'.',
+        tag:'.',
+        img:'a',
+        price:0,
+        inCart:0
+    },
+    {
+        name:'.',
+        tag:'.',
+        img:'a',
+        price:0,
+        inCart:0
+    },
+    {
+        name:'.',
+        tag:'.',
+        img:'a',
+        price:0,
     }
 ];
 
-console.log("running")
+
+/* var product_parent = document.getElementById('pid-1');
+var children = product_parent.children;
+inCart:0  
+children[0].innerText;
+console.log("number child of product_parent =",children.length);
+var children_lenght=children.length;
+console.log("running") */
+/* var total_parent = [];
+for(let j=0;j<carts.length;j++)
+{
+    const total_parent = [
+    "pid-0",
+    "pid-1",
+    "pid-2",
+    "pid-3",
+  ];
+} */
+  //console.log("total_parent_second_child=",total_parent[1]);
+  //console.log("lenght of carts parent=",carts.length);
 for(let i=0;i<carts.length;i++)
 {
+    // call when click on add to cart button
     carts[i].addEventListener('click',()=>{
+        var pid="pid-"+i.toString();
+        htmlelementvalue(products[i],i,pid);
         cartnumbers(products[i]); 
         totalCost(products[i]);
-        console.log("Add eventlistener called");
     })
+}
+
+//set value of product properties in products array
+function htmlelementvalue(product,i,pid)
+{
+    var product_parent = document.getElementById(pid);
+    var children = product_parent.children;
+    var children_lenght=children.length;
+    product.img=children[0].getAttribute('src');
+    product.name=children[1].innerText;
+    console.log("type of price value form htmlelement function",typeof(parseInt(children[2].innerText)));
+    var price1 = children[2].innerText.replace('$','');
+    price1=price1.replace(',','')
+    console.log("price without dollar sign",price1);
+    product.price=parseInt(price1);
+    product.tag=children[3].innerText;
+    console.log('image path=',product.img);
 }
 function onLoadCartNumbers()
 {
@@ -60,16 +143,15 @@ function cartnumbers(product)
     else
     {
         localStorage.setItem('cartNumbers',1);
+        //set cart value on html page
         document.querySelector('.cart span').textContent=1;
     }
-    setItems(product)
+    setItems(product);
 }
-console.log('running2');
 
 function setItems(product)
 {
-     
-  let cartItems   =localStorage.getItem('productInCart');
+let cartItems   =localStorage.getItem('productInCart');
   cartItems=JSON.parse(cartItems);
   /* console.log("cartitem="+cartItems[product.tag]); */
   if(cartItems!=null)
@@ -98,12 +180,16 @@ function totalCost(product)
 
     if(cartCost!=null)
     {
+        console.log("cartcost===",cartCost);
         cartCost=parseInt(cartCost);
         localStorage.setItem("totalCost",cartCost+product.price);
     }
     else
     {
-        localStorage.setItem("totalCost",product.price);
+        let stringprice= (product.price);
+        stringprice=stringprice.toString();
+        localStorage.setItem("totalCost",stringprice);
+        console.log("type of product.price=",typeof(stringprice));
     }
 }
 function displayCart()
@@ -112,18 +198,32 @@ function displayCart()
     cartItems=JSON.parse(cartItems);
     
     let productContainer = document.querySelector(".product");
-    console.log("in display cart function="+cartItems
-    .va);
+    //console.log("in display cart function="+cartItems.va);
     if(cartItems&& productContainer)
     {
         productContainer.innerHTML='';
-        Object.values(cartItems).map(item=>{   
-            productContainer.innerHTML+='div class="product"><img src="./images/${item.tag}.jpg"></img><span>${item.name}</span> </div><div class="price">$${item.price},00</div><div class="quantity"><span>${item.inCart}</span></div><div class="total">$${item.inCart*item.price},00</div>';
-
-            productContainer.innerHTML+='<div class="basketTotalContainer"><h4 class="basketTotalTitle">Basket Total</h4><h4 class="basketTotal">$${cartCost},00</h4>';
-        })
+        Object.values(cartItems).map(item=>{  productContainer.innerHTML+= '<div>'+item.tag+'</div>'
+        console.log();
+            
+            productContainer.innerHTML+='<div class="flex flex-col"><img class="w-10 h-10" src="'+item.img+'"></img><span>'+item.name+'</span> </div><div class="price">$'+item.price+'</div><div class="quantity"><span>'+item.inCart+'</span></div><div class="total">$'+item.inCart*item.price+'</div>';
+ 
+        /*      productContainer.innerHTML+='<div class="basketTotalContainer"><h4 class="basketTotalTitle">Basket Total</h4><h4 class="basketTotal">$${cartCost},00</h4>';
+         */})
     }
 
 }
+
+    /* let parent1 = document.getElementById('id-1');
+    let child1=parent1.children;
+    let numb = document.getElementById("id-1").childNodes.length;
+    let child = document.getElementById("myElement").childNodes.length;
+    console.log("total number of child=",child); myElement
+    var element = document.getElementById('pid-1');
+    var children = element.children;
+    document.getElementById('out').innerHTML = children.length + " children of #myElement."+"text of first child="+children[0].innerHTML;
+    //console.log("text of element =",children[3].innerText);
+    //console.log("number child of script2 =",children.length);
+    */
+
 onLoadCartNumbers();
 displayCart();

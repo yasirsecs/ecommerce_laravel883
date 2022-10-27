@@ -21,24 +21,41 @@
        total item in Cart= <span class="span"></span>
       </div>
       <div  class="flex ">
-        <div class="image">
+        <div id="pid-0" class="image">
           <img src="/images/shoe5.png" alt="thshirt">
           <h3>Black Tshirt</h3>
-          <h3>$10,00</h3>
+          <h3>$10</h3>
+          <p class="tag">blacktshirt</p>
+          <a class="add-cart cart3 " href="#" >Add Cart</a>
+        </div>
+        <div id="pid-1" class="image">
+          <img src="/images/shoe5.png" alt="thshirt">
+          <h3>Blue Tshirt</h3>
+          <h3>$10</h3>
+          <p>bluetshirt</p>
           <a class="add-cart cart3 " href="#" >Add Cart</a>
         </div>
       
-        <div class="image ">
+        <div id="pid-2" class="image ">
           <img src="/images/shoe5.png" alt="thshirt">
-          <h3>Black Tshirt</h3>
-          <h3>$20,00</h3>
+          <h3>Yellow Tshirt</h3>
+          <h3>$20</h3>
+          <p>yellowtshirt</p>
           <a class="add-cart cart3" href="#" >Add Cart</a>
         </div>
 
-        <div class="image ">
+        <div id="pid-3" class="image ">
           <img src="/images/shoe5.png" alt="thshirt">
-          <h3>Black Tshirt</h3>
-          <h3>$25,00</h3>
+          <h3>greed Tshirt</h3>
+          <h3>$25</h3>
+          <p>greentshirt</p>
+          <a class="add-cart cart3" href="#" >Add Cart</a>
+        </div>
+        <div id="pid-4" class="image ">
+          <img src="/images/shoe5.png" alt="thshirt">
+          <h3>Red Tshirt</h3>
+          <h3>$25</h3>
+          <p>redtshirt</p>
           <a class="add-cart cart3" href="#" >Add Cart</a>
         </div>
     </div>
@@ -55,9 +72,35 @@
 
       </div>
     </div>
+{{-- 
+    <h2>Get Children of this HTML Element using JavaScript</h2>
+    <div id="myElement">
+      <p>Hello <span>World</span>!</p>
+      <ul><li>List Item</li></ul>
+      <div>Sample World</div>
+      <img src="/images/shoe5.png" alt="thshirt">
+      <h3>Black Tshirt</h3>
+          <h3>$20,00</h3>
+          <a class=" cart3" href="#" >Add Cart</a>
+    </div>
+    <br>
+    <button type="button" onclick="execute()">Click Me</button>
+    <p id="out"></p> --}}
+    <script>
+       
+   /*  function execute(){
+        var element = document.getElementById('myElement');
+        var children = element.children;
+        document.getElementById('out').innerHTML = children.length + " children of #myElement."+"text of first child="+children[0];
+        console.log("text of element =",children[0].innerText);
+        console.log("number child of script2 =",children.length);
+    } */
+    </script>
+</body>
     </body>
 
         <script>
+
           function showcart() 
         {
           var text = document.getElementById('cart1');

@@ -894,14 +894,14 @@ video {
 .hidden {
   display: none;
 }
+.h-10 {
+  height: 2.5rem;
+}
 .h-screen {
   height: 100vh;
 }
 .h-6 {
   height: 1.5rem;
-}
-.h-10 {
-  height: 2.5rem;
 }
 .h-full {
   height: 100%;
@@ -960,6 +960,9 @@ video {
 .min-h-screen {
   min-height: 100vh;
 }
+.w-10 {
+  width: 2.5rem;
+}
 .w-full {
   width: 100%;
 }
@@ -968,9 +971,6 @@ video {
 }
 .w-6 {
   width: 1.5rem;
-}
-.w-10 {
-  width: 2.5rem;
 }
 .w-8 {
   width: 2rem;

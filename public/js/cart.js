@@ -17271,52 +17271,129 @@ var __webpack_exports__ = {};
 /*!******************************!*\
   !*** ./resources/js/cart.js ***!
   \******************************/
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
 var _require = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js"),
     takeRight = _require.takeRight;
 
 var carts = document.querySelectorAll('.add-cart');
-console.log(carts[1]);
+/* console.log(carts[1]); */
+
 var products = [{
-  name: 'Grey Tshirt',
-  tag: 'greytshirt',
-  price: 15,
+  name: '.',
+  tag: '.',
+  img: 'a',
+  price: 0,
   inCart: 0
 }, {
-  name: 'Grey hoddie',
-  tag: 'greyhoddie',
-  price: 20,
+  name: '.',
+  tag: '.',
+  img: 'a',
+  price: 0,
   inCart: 0
 }, {
-  name: 'Black Tshirt',
-  tag: 'blacktshirt',
-  price: 10,
+  name: '.',
+  tag: '.',
+  img: 'a',
+  price: 0,
   inCart: 0
 }, {
-  name: 'Black Hoddie',
-  tag: 'blackhoddie',
-  price: 25,
+  name: '.',
+  tag: '.',
+  img: 'a',
+  price: 0,
   inCart: 0
+}, {
+  name: '.',
+  tag: '.',
+  img: 'a',
+  price: 0,
+  inCart: 0
+}, {
+  name: '.',
+  tag: '.',
+  img: 'a',
+  price: 0,
+  inCart: 0
+}, {
+  name: '.',
+  tag: '.',
+  img: 'a',
+  price: 0,
+  inCart: 0
+}, {
+  name: '.',
+  tag: '.',
+  img: 'a',
+  price: 0,
+  inCart: 0
+}, {
+  name: '.',
+  tag: '.',
+  img: 'a',
+  price: 0,
+  inCart: 0
+}, {
+  name: '.',
+  tag: '.',
+  img: 'a',
+  price: 0
 }];
-console.log("running");
+/* var product_parent = document.getElementById('pid-1');
+var children = product_parent.children;
+inCart:0  
+children[0].innerText;
+console.log("number child of product_parent =",children.length);
+var children_lenght=children.length;
+console.log("running") */
+
+/* var total_parent = [];
+for(let j=0;j<carts.length;j++)
+{
+    const total_parent = [
+    "pid-0",
+    "pid-1",
+    "pid-2",
+    "pid-3",
+  ];
+} */
+//console.log("total_parent_second_child=",total_parent[1]);
+//console.log("lenght of carts parent=",carts.length);
 
 var _loop = function _loop(i) {
+  // call when click on add to cart button
   carts[i].addEventListener('click', function () {
+    var pid = "pid-" + i.toString();
+    htmlelementvalue(products[i], i, pid);
     cartnumbers(products[i]);
     totalCost(products[i]);
-    console.log("Add eventlistener called");
   });
 };
 
 for (var i = 0; i < carts.length; i++) {
   _loop(i);
+} //set value of product properties in products array
+
+
+function htmlelementvalue(product, i, pid) {
+  var product_parent = document.getElementById(pid);
+  var children = product_parent.children;
+  var children_lenght = children.length;
+  product.img = children[0].getAttribute('src');
+  product.name = children[1].innerText;
+  console.log("type of price value form htmlelement function", _typeof(parseInt(children[2].innerText)));
+  var price1 = children[2].innerText.replace('$', '');
+  price1 = price1.replace(',', '');
+  console.log("price without dollar sign", price1);
+  product.price = parseInt(price1);
+  product.tag = children[3].innerText;
+  console.log('image path=', product.img);
 }
 
 function onLoadCartNumbers() {
@@ -17335,14 +17412,13 @@ function cartnumbers(product) {
     localStorage.setItem('cartNumbers', productNumbers + 1);
     document.querySelector('.cart span').textContent = productNumbers + 1;
   } else {
-    localStorage.setItem('cartNumbers', 1);
+    localStorage.setItem('cartNumbers', 1); //set cart value on html page
+
     document.querySelector('.cart span').textContent = 1;
   }
 
   setItems(product);
 }
-
-console.log('running2');
 
 function setItems(product) {
   var cartItems = localStorage.getItem('productInCart');
@@ -17369,27 +17445,45 @@ function totalCost(product) {
   console.log(_typeof(cartCost));
 
   if (cartCost != null) {
+    console.log("cartcost===", cartCost);
     cartCost = parseInt(cartCost);
     localStorage.setItem("totalCost", cartCost + product.price);
   } else {
-    localStorage.setItem("totalCost", product.price);
+    var stringprice = product.price;
+    stringprice = stringprice.toString();
+    localStorage.setItem("totalCost", stringprice);
+    console.log("type of product.price=", _typeof(stringprice));
   }
 }
 
 function displayCart() {
   var cartItems = localStorage.getItem("productInCart");
   cartItems = JSON.parse(cartItems);
-  var productContainer = document.querySelector(".product");
-  console.log("in display cart function=" + cartItems.va);
+  var productContainer = document.querySelector(".product"); //console.log("in display cart function="+cartItems.va);
 
   if (cartItems && productContainer) {
     productContainer.innerHTML = '';
     Object.values(cartItems).map(function (item) {
-      productContainer.innerHTML += 'div class="product"><img src="./images/${item.tag}.jpg"></img><span>${item.name}</span> </div><div class="price">$${item.price},00</div><div class="quantity"><span>${item.inCart}</span></div><div class="total">$${item.inCart*item.price},00</div>';
-      productContainer.innerHTML += '<div class="basketTotalContainer"><h4 class="basketTotalTitle">Basket Total</h4><h4 class="basketTotal">$${cartCost},00</h4>';
+      productContainer.innerHTML += '<div>' + item.tag + '</div>';
+      console.log();
+      productContainer.innerHTML += '<div class="flex flex-col"><img class="w-10 h-10" src="' + item.img + '"></img><span>' + item.name + '</span> </div><div class="price">$' + item.price + '</div><div class="quantity"><span>' + item.inCart + '</span></div><div class="total">$' + item.inCart * item.price + '</div>';
+      /*      productContainer.innerHTML+='<div class="basketTotalContainer"><h4 class="basketTotalTitle">Basket Total</h4><h4 class="basketTotal">$${cartCost},00</h4>';
+       */
     });
   }
 }
+/* let parent1 = document.getElementById('id-1');
+let child1=parent1.children;
+let numb = document.getElementById("id-1").childNodes.length;
+let child = document.getElementById("myElement").childNodes.length;
+console.log("total number of child=",child); myElement
+var element = document.getElementById('pid-1');
+var children = element.children;
+document.getElementById('out').innerHTML = children.length + " children of #myElement."+"text of first child="+children[0].innerHTML;
+//console.log("text of element =",children[3].innerText);
+//console.log("number child of script2 =",children.length);
+*/
+
 
 onLoadCartNumbers();
 displayCart();

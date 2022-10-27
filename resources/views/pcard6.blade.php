@@ -7,7 +7,7 @@
 
 <div id="siteWrapper" class=" main-container container p-5 w-full">
                 @include('layouts.mobile-navbar')
-      <div class="  px-5 lg:px-0 flex flex-col lg:flex-row item-center justify-center p-8 border border-cyan-200" >
+      <div class=" px-5 lg:px-0 flex flex-col lg:flex-row item-center justify-center p-8 border border-cyan-200" >
                   
                     <div class="lg:w-1/3 item-images flex flex-col w-full bg-green border rounded-md ">
                       <div class="large-image-view w-full py-5   ">
