@@ -224,6 +224,12 @@ function displayCart()
     //console.log("text of element =",children[3].innerText);
     //console.log("number child of script2 =",children.length);
     */
+// remove item from cart
 
+let removeitemcart=document.querySelectorAll('.removeitemcart');
+
+removeitemcart.addEventListener('click',()=>{
+    console.log("remove item clicked");
+})
 onLoadCartNumbers();
 displayCart();

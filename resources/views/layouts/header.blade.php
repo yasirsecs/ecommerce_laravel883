@@ -8,8 +8,8 @@
   {{--   @vite('resources/css/app.css')
     @vite('resources/js/script1.js')  --}}
     <script src="{{asset('/js/app.js')}}"></script>
-    <script src="{{asset('/js/sidebar.js')}}" defer></script>
-    <script src="{{asset('/js/cart.js')}}" defer></script>
+   {{--  <script src="{{asset('/js/sidebar.js')}}" defer></script> --}}
+   <script src="{{asset('/js/singleitemcart.js')}}" defer></script>
     {{-- <script src="{{asset('/js/usersetting.js')}}"></script> --}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
    {{--  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" /> --}}
@@ -89,8 +89,8 @@
             @else
             <a href="{{url('login')}}">Login</a>
             @endif
-             
-           </div>
+            @include('layouts.cart-icon') 
+          </div>
            <!-- Dropdown menu -->
             <div id="usersetting2" class=" order-1  lg:absolute hidden lg:top-10 lg:right-20 w-32 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
               <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">

@@ -17483,8 +17483,13 @@ document.getElementById('out').innerHTML = children.length + " children of #myEl
 //console.log("text of element =",children[3].innerText);
 //console.log("number child of script2 =",children.length);
 */
+// remove item from cart
 
 
+var removeitemcart = document.querySelectorAll('.removeitemcart');
+removeitemcart.addEventListener('click', function () {
+  console.log("remove item clicked");
+});
 onLoadCartNumbers();
 displayCart();
 })();
