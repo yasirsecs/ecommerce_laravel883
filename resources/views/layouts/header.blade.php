@@ -90,6 +90,8 @@
             <a href="{{url('login')}}">Login</a>
             @endif
             @include('layouts.cart-icon') 
+            @include('layouts.cart') 
+
           </div>
            <!-- Dropdown menu -->
             <div id="usersetting2" class=" order-1  lg:absolute hidden lg:top-10 lg:right-20 w-32 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
@@ -109,3 +111,43 @@
       </div>
     </div>
   </div>
+  <script>
+    function showcart() 
+  {
+    var text = document.getElementById('cart1');
+    text.classList.add('hidden');
+    //text.classList.add('cart-active');
+  }
+  function showcart1() 
+  {
+    var maincart1 = document.getElementById('cart1');
+    var cartlist1 = document.getElementById('cart2');
+    maincart1.classList.remove('hidden');
+    maincart1.classList.add('visible');
+    maincart1.classList.add('cart-main-active');
+    //cartlist1.classList.add('cart-list-active')
+  }
+  
+  function hidecart() {
+    var maincart1 = document.getElementById('cart1');
+    var cartlist1 = document.getElementById('cart2');
+    maincart1.classList.remove('visible');
+    maincart1.classList.add('hidden');
+    maincart1.classList.add('cart-main-deactive');
+    cartlist1.classList.add('cart-list-deactive')
+  }
+  
+  /* function remove() {
+    console.log("Remove button working fine from pcard6==",document.getElementById("removeitem-0").id);
+  } */
+  /* let removebuttonid=document.getElementById("removebtn");
+   removebuttonid.addEventListener('click',()=>{
+      console.log("remove button clicked pcard6");
+      //console.log("id of remove button=",removebutton.id);
+  })
+   */
+  
+   
+  
+  
+  </script> 

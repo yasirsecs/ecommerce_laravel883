@@ -1,124 +1,75 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  <script src="{{asset('/js/cart.js')}}" defer></script>
- {{--  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" /> --}}
- 
- 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
 </head>
-<body class=" h-screen">
-  <style>
-
-    
-    
-    </style>
-    
-    <body>
-      <div class="cart ">
-       total item in Cart= <span class="span"></span>
-      </div>
-      <div  class="flex ">
-        <div id="pid-0" class="image">
-          <img src="/images/shoe5.png" alt="thshirt">
-          <h3>Black Tshirt</h3>
-          <h3>$10</h3>
-          <p class="tag">blacktshirt</p>
-          <a class="add-cart cart3 " href="#" >Add Cart</a>
-        </div>
-        <div id="pid-1" class="image">
-          <img src="/images/shoe5.png" alt="thshirt">
-          <h3>Blue Tshirt</h3>
-          <h3>$10</h3>
-          <p>bluetshirt</p>
-          <a class="add-cart cart3 " href="#" >Add Cart</a>
-        </div>
-      
-        <div id="pid-2" class="image ">
-          <img src="/images/shoe5.png" alt="thshirt">
-          <h3>Yellow Tshirt</h3>
-          <h3>$20</h3>
-          <p>yellowtshirt</p>
-          <a class="add-cart cart3" href="#" >Add Cart</a>
-        </div>
-
-        <div id="pid-3" class="image ">
-          <img src="/images/shoe5.png" alt="thshirt">
-          <h3>greed Tshirt</h3>
-          <h3>$25</h3>
-          <p>greentshirt</p>
-          <a class="add-cart cart3" href="#" >Add Cart</a>
-        </div>
-        <div id="pid-4" class="image ">
-          <img src="/images/shoe5.png" alt="thshirt">
-          <h3>Red Tshirt</h3>
-          <h3>$25</h3>
-          <p>redtshirt</p>
-          <a class="add-cart cart3" href="#" >Add Cart</a>
-        </div>
+<body>
+  <div id="yasir" class="yasir">
+  </div>
+  <button id="appendbtn">Append</button>
+    {{-- <button onclick="yasir()">button1</button>
+    <div id="yasir" class="yasir">
     </div>
-    
-
-    <div class="products-container">
-      <div class="product-header">
-        <h5 class="product-title" >Product</h5>
-        <h5 class="price" >Price</h5>
-        <h5 class="quantity" >Quantity</h5>
-        <h5 class="total" >Total</h5>
-      </div>
-      <div class="product">
-
-      </div>
-    </div>
-{{-- 
-    <h2>Get Children of this HTML Element using JavaScript</h2>
-    <div id="myElement">
-      <p>Hello <span>World</span>!</p>
-      <ul><li>List Item</li></ul>
-      <div>Sample World</div>
-      <img src="/images/shoe5.png" alt="thshirt">
-      <h3>Black Tshirt</h3>
-          <h3>$20,00</h3>
-          <a class=" cart3" href="#" >Add Cart</a>
-    </div>
-    <br>
-    <button type="button" onclick="execute()">Click Me</button>
-    <p id="out"></p> --}}
-    <script>
-       
-   /*  function execute(){
-        var element = document.getElementById('myElement');
-        var children = element.children;
-        document.getElementById('out').innerHTML = children.length + " children of #myElement."+"text of first child="+children[0];
-        console.log("text of element =",children[0].innerText);
-        console.log("number child of script2 =",children.length);
-    } */
-    </script>
+    <button onclick="newfun()">button</button> --}}
+    <script src="{{asset('/js/test.js')}}" defer></script>
 </body>
-    </body>
+<script>
 
-        <script>
+   
+  /* 
+  var text = document.getElementById('yasir');
+  function yasir() 
+  {
+     text.innerHTML+='<button id="newbtn" onclick="newfun()">new button</button>';
+  }
+  function newfun() 
+  {
+    var new1 = document.getElementById('newbtn');
+     new1.addEventListener('click',()=>{
+       console.log("eventlistener working"); 
+    })
+  }
+   */
+   
+/* 
+let newDog = document.createElement('div')
 
-          function showcart() 
-        {
-          var text = document.getElementById('cart1');
-          /* text.classList.toggle('hidden'); */
-          text.classList.add('cart-active1');
-        }
-        function showcart1() 
-        {
-          var text = document.getElementById('cart1');
-          /* text.classList.toggle('hidden'); */
-          text.classList.add('cart-active1');
-        }
-        
-        function hidecart() {
-          var text = document.getElementById('text');
-          text.classList.remove('show');
-          text.classList.add('hidden');
-        }
-        </script> 
-</body>
+newDog.classList.add('dog')
+
+const myImage = document.createElement('img')
+myImage.src="https://picsum.photos/id/237/500/500";
+myImage.alt='Dog photo'
+
+const h2 = document.createElement('h2')
+h2.textContent = 'My name is Roviel and i love playing and eating.'
+
+const p = document.createElement('p')
+p.classList.add('moreInfo')
+
+p.textContent= 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. ent montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat.'
+
+
+const button = document.createElement('button')
+button.classList.add('btn')
+button.textContent= 'Click to read  more about me '
+
+document.body.appendChild(newDog)
+newDog.appendChild(myImage)
+newDog.appendChild(h2)
+newDog.appendChild(p)
+newDog.appendChild(button)
+
+// Adding event handlers
+
+function showMore(){
+  document.querySelector('.moreInfo').style.display ='block';
+  console.log("dog button clicked");
+}
+
+document.querySelector('.btn').addEventListener('click', showMore) */
+   </script> 
 </html>
