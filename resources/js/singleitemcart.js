@@ -1,7 +1,7 @@
 const { takeRight } = require("lodash");
 
 let carts=document.querySelectorAll('.add-cart');
-/* console.log(carts[1]); */
+ //console.log("add cart value=",carts[2]);
 let products=[
     {
         name:'.',
@@ -102,24 +102,21 @@ for(let i=0;i<carts.length;i++)
         htmlelementvalue(products[i],i,pid);
         cartnumbers(products[i]); 
         totalCost(products[i]);
+        displayCart();
     })
 }
 
 //set value of product properties in products array
 function htmlelementvalue(product,i,pid)
 {
-    var product_parent = document.getElementById(pid);
-    var children = product_parent.children;
-    var children_lenght=children.length;
-    product.img=children[0].getAttribute('src');
-    product.name=children[1].innerText;
-    console.log("type of price value form htmlelement function",typeof(parseInt(children[2].innerText)));
-    var price1 = children[2].innerText.replace('$','');
+    product.img=document.getElementById("cart-image").getAttribute('src');
+    product.name=document.getElementById("card-item-name").innerText;
+    var price1 = document.getElementById("cart-item-price").innerText.replace('$','');
     price1=price1.replace(',','')
-    console.log("price without dollar sign",price1);
     product.price=parseInt(price1);
-    product.tag=children[3].innerText;
-    console.log('image path=',product.img);
+    product.tag=document.getElementById("cart-item-tag").innerText;
+    
+    
 }
 function onLoadCartNumbers()
 {
@@ -175,12 +172,11 @@ localStorage.setItem("productInCart",JSON.stringify(cartItems));
 function totalCost(product)
 {
     let cartCost=localStorage.getItem('totalCost');
-    console.log("my cartCost is ",cartCost);
-    console.log(typeof cartCost);
+    //console.log("my cartCost is ",cartCost);
 
     if(cartCost!=null)
     {
-        console.log("cartcost===",cartCost);
+        //console.log("cartcost===",cartCost);
         cartCost=parseInt(cartCost);
         localStorage.setItem("totalCost",cartCost+product.price);
     }
@@ -189,41 +185,189 @@ function totalCost(product)
         let stringprice= (product.price);
         stringprice=stringprice.toString();
         localStorage.setItem("totalCost",stringprice);
-        console.log("type of product.price=",typeof(stringprice));
+        //console.log("type of product.price=",typeof(stringprice));
     }
 }
 function displayCart()
 {
     let cartItems = localStorage.getItem("productInCart");
+    let carttotalcost = localStorage.getItem("totalCost");
     cartItems=JSON.parse(cartItems);
     
-    let productContainer = document.querySelector(".product");
-    //console.log("in display cart function="+cartItems.va);
+    /*console.log("value of womenrunner=",cartItems.womenrunner.img);
+     let imagincart=document.getElementById("imagincart");
+    let nameitemcart=document.getElementById("nameitemcart");
+    let priceitemcart=document.getElementById("priceitemcart");
+    let detailitemcart=document.getElementById("detailitemcart");
+    let quantityitemcart=document.getElementById("quantityitemcart");
+    let removeitemcart=document.getElementById("imagincart"); */
+    let productContainer = document.querySelector(".cart-item-list");
+    let totalprice=document.getElementById("cart-price-total");
+    let count=0;
+
+    /* imagincart.src=cartItems.womenrunner.img;
+    nameitemcart.innerText=cartItems.womenrunner.name;
+    priceitemcart.innerText=cartItems.womenrunner.price;
+    detailitemcart.innerText="detail";
+    quantityitemcart.innerText=cartItems.womenrunner.inCart;
+    console.log("total product=",cartItems.womenrunner.inCart); 
+    console.log("total product=",cartItems.womenrunner.inCart);*/
+
     if(cartItems&& productContainer)
-    {
+    { 
+        let cartitemid;
+        
         productContainer.innerHTML='';
-        Object.values(cartItems).map(item=>{  productContainer.innerHTML+= '<div>'+item.tag+'</div>'
-        console.log();
+          Object.values(cartItems).map(item=>
+            {
+                if(item.inCart>0)
+                {
+                    cartitemid="item-"+count;
+                 productContainer.innerHTML+='<li id="list'+cartitemid+'" class="cartitemlist flex py-6">'
+                      +'<div  class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">'
+                        +'<img id="img'+cartitemid+'" src="'+item.img+'" alt=" Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." class="cartitemimage h-full w-full object-cover object-center">'
+                      +'</div>'
+                      +'<div class="ml-4 flex flex-1 flex-col">'
+                        +'<div>'
+                          +'<div class="flex justify-between text-base font-medium text-gray-900">'
+                            +'<h3>'
+                              +'<a href="#">Throwback Hip Bag</a>'
+                            +'</h3>'
+                            +'<p id="price'+cartitemid+'" class="cartitemprice ml-4">$'+item.price+'.00</p>'
+                          +'</div>'
+                          +'<p id="name'+cartitemid+'" class="cartitemname mt-1 text-sm text-gray-500">'+item.name+'</p>'
+                          +'<p id="tag'+cartitemid+'" class="cartitemtag mt-1 text-sm text-gray-500">'+item.tag+'</p>'
+                        +'</div>'
+                        +'<div class="flex flex-1 items-end justify-between text-sm">'
+                          +'<p id="quantity'+cartitemid+'" class=" cartitemquantity text-gray-500">'+item.inCart+'</p>'
+                          +'<div id="removediv'+cartitemid+'" class="flex">'
+                          +'</div>'
+                        +'</div>'
+                      +'</div>'
+                    +'</li>';
+                    let btnid="removebtn"+count;
+                    //console.log("id of remove btn=",btnid);
+                    const button = document.createElement('button');
+                    button.setAttribute('id', btnid);
+                    button.setAttribute('class', 'text-indigo-600');
+                    button.classList.add('hover:bg-slate-400');
+                    button.textContent= 'Button2';
+                    document.getElementById("removediv"+cartitemid).appendChild(button);
+                    
+                    count=count+1;
+                }                    
+            }) 
+            let btncount=0;
+            for (var key in cartItems) 
+            {
+                
+                if (cartItems.hasOwnProperty(key)) {
+                  // alert(cartItems[key].name);
+                  // alert(cartItems[key].price);
+                  let listid="listitem-"+btncount;
+                  // console.log("listid for remove btn=",listid);
+                   document.getElementById("removebtn"+btncount).addEventListener('click',()=>{
+                   let cartitemlist=document.getElementById(listid);
+                   removecartitem(cartitemlist);
+                });
+                }
+                //console.log("btncount=",btncount);
+                btncount=btncount+1;
+             }
+
+            totalprice.innerText=(carttotalcost).toString();
             
-            productContainer.innerHTML+='<div class="flex flex-col"><img class="w-10 h-10" src="'+item.img+'"></img><span>'+item.name+'</span> </div><div class="price">$'+item.price+'</div><div class="quantity"><span>'+item.inCart+'</span></div><div class="total">$'+item.inCart*item.price+'</div>';
- 
-        /*      productContainer.innerHTML+='<div class="basketTotalContainer"><h4 class="basketTotalTitle">Basket Total</h4><h4 class="basketTotal">$${cartCost},00</h4>';
-         */})
+            
     }
 
 }
 
-    /* let parent1 = document.getElementById('id-1');
-    let child1=parent1.children;
-    let numb = document.getElementById("id-1").childNodes.length;
-    let child = document.getElementById("myElement").childNodes.length;
-    console.log("total number of child=",child); myElement
-    var element = document.getElementById('pid-1');
-    var children = element.children;
-    document.getElementById('out').innerHTML = children.length + " children of #myElement."+"text of first child="+children[0].innerHTML;
-    //console.log("text of element =",children[3].innerText);
-    //console.log("number child of script2 =",children.length);
-    */
+   // remove item from cart
 
+
+ 
 onLoadCartNumbers();
 displayCart();
+
+
+/*let cartitemlist=document.getElementsByClassName("cartitemlist");
+let cartitemlist2=document.getElementById("listitem-1");
+let child=cartitemlist2.querySelector(".cartitemprice").innerText;
+let cartprice=document.querySelector('.cartitemlist .cartitemprice'); */
+
+
+
+
+//remove item from cart
+/* for(let i=0;i<removebutton.length;i++)
+{
+    // call when click on add to cart button
+    let idoflist="listitem-"+i;
+    let cartitemlist=document.getElementById(idoflist);
+    //console.log("id of list",cartitemlist.id);
+    removebutton[i].addEventListener('click',()=>{
+        removecartitem(cartitemlist);
+    })
+}*/
+function removecartitem(cartitemlist)
+{
+  //console.log("Remove button working fine from removecartitem");
+  let tag=cartitemlist.querySelector(".cartitemtag").innerText;
+  let price=cartitemlist.querySelector(".cartitemprice").innerText.replace('$','');
+  price=parseInt(price);
+  let quantity=cartitemlist.querySelector(".cartitemquantity").innerText;
+  
+  let cartItems = localStorage.getItem("productInCart");
+  let carttotalcost = localStorage.getItem("totalCost");
+  let cartNumbers = localStorage.getItem("cartNumbers");
+  cartItems=JSON.parse(cartItems);
+  
+  //console.log("total cost after remove item=",carttotalcost)
+  //let newquantity =cartItems["womenrunner333"].inCart+=1; 
+  //let tagarray =cartItems["womenrunner333"]; 
+  //console.log("first item of jsonarray=",cartItems[1]);
+  /* let data={
+        name:name,
+        tag:tag,
+        img:image,
+        price:price,
+        inCart:quantity
+    }; */
+  
+  //console.log("data array tage value=",data.tag);
+  if(cartItems!=null)
+    {
+        if(cartItems[tag].tag==tag)
+        {
+            if(quantity>0)
+            {
+                cartItems[tag].inCart-=1;
+                carttotalcost=carttotalcost-price;
+                quantity=quantity-1;
+                //console.log("old value of cartnumber=",cartNumbers);
+                cartNumbers=cartNumbers-1;
+                //console.log("new value of cartnumber=",cartNumbers);
+
+                carttotalcost=carttotalcost.toString();
+                cartitemlist.querySelector(".cartitemquantity").innerText=quantity;
+                //document.querySelector('.cart span').textContent=productNumbers-1;
+                document.getElementById("cart-price-total").textContent=carttotalcost;
+                if(quantity<=0)
+                {
+                    cartitemlist.classList.add("hidden");
+                    delete cartItems[tag];
+                }
+    
+                localStorage.setItem('cartNumbers',cartNumbers);
+                localStorage.setItem("totalCost",carttotalcost);
+                localStorage.setItem("productInCart",JSON.stringify(cartItems));
+                
+            }        
+        }
+    }
+    
+    onLoadCartNumbers();
+}
+
+
+

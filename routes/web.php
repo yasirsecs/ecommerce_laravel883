@@ -55,3 +55,7 @@ Route::get('/amirlanding', function () {
 Route::get('/yasir', function () {
     return view('yasir');
 });
+
+Route::get('/paymenttest', function () {
+    return view('paymenttest');
+});
