@@ -34,15 +34,13 @@ function removeDeactiveClass () {
   {
       document.getElementById("usersetting2").classList.toggle('hidden');
   }
-  function myFunction() {
-    document.getElementById("demo").innerHTML = "Hello World";
-  }
+ 
   window.usersettingfunction = usersettingfunction;
   
-  window.myFunction = myFunction;
 
 
-    const cartdiv = document.getElementById("cartdiv");
+
+    /* const cartdiv = document.getElementById("cartdiv");
     const cartbutton = document.getElementById("cartbutton");
     cartbutton.addEventListener('click', function() {
         document.getElementById("cartdiv").classList.remove('visible');
@@ -55,8 +53,7 @@ function removecartClass () {
       site.classList.remove('translate-x-0')
       mobileNavbar.classList.add('hidden')
 }, 500);
-}  
-     
+}  */
       
 
 

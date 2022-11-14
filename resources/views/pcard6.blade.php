@@ -84,7 +84,7 @@
                     </div> --}}
                     <!-- second card-->
                     
-                    <!--   shoping cart start here --> 
+                    <!--   card start here --> 
                     <div class="lg:w-1/4  rounded-lg dark:bg-gray-800 dark:border-gray-700 border p-5 ">
                           <div class="px-5 pb-5">
                             <a href="#">
@@ -115,7 +115,7 @@
                             </div>
                           </div>   
                     </div>
-                     <!--   shoping cart end here --> 
+                     <!--   card end here --> 
                     <!--   shoping cart start here --> 
                     {{-- <div class="cart absolute right-5 top-1 flex">
                       <button id="burgerButton" onclick='showcart1()' class="burger bg-white   rounded-lg hover:bg-gray-300 p-2">
@@ -130,7 +130,7 @@
                       
                     <!--   shoping cart end here -->
                     {{-- start of cart here--}}
-                    @include('layouts.cart') 
+                    @include('layouts.cart')
                     {{-- end of cart --}}
 {{-- <script src="{{asset('/js/singleitemcart.js')}}" defer></script>  --}}                  
 

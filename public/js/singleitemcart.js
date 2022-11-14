@@ -17392,7 +17392,7 @@ function onLoadCartNumbers() {
   var productNumbers = localStorage.getItem('cartNumbers');
 
   if (productNumbers) {
-    document.querySelector('.cart span').textContent = productNumbers;
+    document.querySelector('.cart-count').textContent = productNumbers;
   }
 }
 
@@ -17402,11 +17402,11 @@ function cartnumbers(product) {
 
   if (productNumbers) {
     localStorage.setItem('cartNumbers', productNumbers + 1);
-    document.querySelector('.cart span').textContent = productNumbers + 1;
+    document.querySelector('.cart-count').textContent = productNumbers + 1;
   } else {
     localStorage.setItem('cartNumbers', 1); //set cart value on html page
 
-    document.querySelector('.cart span').textContent = 1;
+    document.querySelector('.cart-count').textContent = 1;
   }
 
   setItems(product);
@@ -17480,8 +17480,9 @@ function displayCart() {
         var button = document.createElement('button');
         button.setAttribute('id', btnid);
         button.setAttribute('class', 'text-indigo-600');
-        button.classList.add('hover:bg-slate-400');
-        button.textContent = 'Button2';
+        button.classList.add('hover:text-indigo-500');
+        button.classList.add('font-medium');
+        button.textContent = 'Remove';
         document.getElementById("removediv" + cartitemid).appendChild(button);
         count = count + 1;
       }

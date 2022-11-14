@@ -8,8 +8,8 @@
   {{--   @vite('resources/css/app.css')
     @vite('resources/js/script1.js')  --}}
     <script src="{{asset('/js/app.js')}}"></script>
-   {{--  <script src="{{asset('/js/sidebar.js')}}" defer></script> --}}
-   <script src="{{asset('/js/singleitemcart.js')}}" defer></script>
+    <script src="{{asset('/js/sidebar.js')}}" defer></script>
+    <script src="{{asset('/js/singleitemcart.js')}}" defer></script>
     {{-- <script src="{{asset('/js/usersetting.js')}}"></script> --}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
    {{--  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" /> --}}
@@ -67,13 +67,13 @@
                 </span>
               </a>
             </li>
-            <li>
+            {{-- <li>
               <a href="#" class="block text-medium text-gray-200 w-full p-1 lg:p-3 hover:bg-black hover:bg-opacity-50 lg:hover:bg-opacity-50">
                 <span>
                 Collection
                 </span>
               </a>
-            </li>
+            </li> --}}
            
           </ul>
         </nav>
@@ -87,12 +87,12 @@
             <img src="/images/yasir1.jpg" class=" order-0 lg:order-1 block rounded-full w-6 h-6  lg:w-6 px-2" alt="">
               </button>
             @else
-            <a href="{{url('login')}}">Login</a>
+            <a href="{{url('login')}}" class="px-2">Login</a>
             @endif
             @include('layouts.cart-icon') 
-            @include('layouts.cart') 
-
+           
           </div>
+          @include('layouts.cart') 
            <!-- Dropdown menu -->
             <div id="usersetting2" class=" order-1  lg:absolute hidden lg:top-10 lg:right-20 w-32 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
               <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
@@ -107,12 +107,13 @@
                 </li>
               </ul>
             </div>
-      </div>
-      </div>
+          </div>
+        </div>
     </div>
   </div>
+  
   <script>
-    function showcart() 
+     function showcart() 
   {
     var text = document.getElementById('cart1');
     text.classList.add('hidden');
@@ -136,7 +137,7 @@
     maincart1.classList.add('cart-main-deactive');
     cartlist1.classList.add('cart-list-deactive')
   }
-  
+   
   /* function remove() {
     console.log("Remove button working fine from pcard6==",document.getElementById("removeitem-0").id);
   } */
