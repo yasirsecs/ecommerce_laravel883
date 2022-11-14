@@ -2,4 +2,4 @@
   
     @yield('main-section')
    
-   @include('layouts.footer')
+    @include('layouts.footer') 

@@ -8,7 +8,7 @@ Product Categories
   @include('layouts.mobile-navbar')
     <div class="container mx-auto px-5 lg:px-0">
       <div class="pageTitle text-3xl font-medium mb-5">
-        <h1>Product</h1> 
+        <h1>Product</h1>  
       </div>
       <!-- product -->
       <div class="product grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
