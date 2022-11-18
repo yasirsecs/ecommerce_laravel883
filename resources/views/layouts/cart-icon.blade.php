@@ -6,9 +6,4 @@
       </svg>
     </button>
     <span class="  cart-count rounded-full p-1">0</span>
-  
-
-  
-              
-    
   <!--   shoping cart end h-ere -->
