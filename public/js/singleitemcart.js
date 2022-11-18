@@ -17582,6 +17582,72 @@ function removecartitem(cartitemlist) {
 
   onLoadCartNumbers();
 }
+
+function displayCartcheckout() {
+  var cartItems = localStorage.getItem("productInCart");
+  var carttotalcost = localStorage.getItem("totalCost");
+  cartItems = JSON.parse(cartItems);
+  /*console.log("value of womenrunner=",cartItems.womenrunner.img);
+   let imagincart=document.getElementById("imagincart");
+  let nameitemcart=document.getElementById("nameitemcart");
+  let priceitemcart=document.getElementById("priceitemcart");
+  let detailitemcart=document.getElementById("detailitemcart");
+  let quantityitemcart=document.getElementById("quantityitemcart");
+  let removeitemcart=document.getElementById("imagincart"); */
+
+  var productContainer = document.querySelector(".cart-item-checkout");
+  var totalprice = document.getElementById("cart-price-total");
+  var count = 0;
+  /* imagincart.src=cartItems.womenrunner.img;
+  nameitemcart.innerText=cartItems.womenrunner.name;
+  priceitemcart.innerText=cartItems.womenrunner.price;
+  detailitemcart.innerText="detail";
+  quantityitemcart.innerText=cartItems.womenrunner.inCart;
+  console.log("total product=",cartItems.womenrunner.inCart); 
+  console.log("total product=",cartItems.womenrunner.inCart);*/
+
+  if (cartItems && productContainer) {
+    var cartitemid;
+    productContainer.innerHTML = '';
+    Object.values(cartItems).map(function (item) {
+      if (item.inCart > 0) {
+        cartitemid = "item-" + count;
+        productContainer.innerHTML += '<li id="list' + cartitemid + '" class="cartitemlist flex py-6">' + '<div  class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">' + '<img id="img' + cartitemid + '" src="' + item.img + '" alt=" Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." class="cartitemimage h-full w-full object-cover object-center">' + '</div>' + '<div class="ml-4 flex flex-1 flex-col">' + '<div>' + '<div class="flex justify-between text-base font-medium text-gray-900">' + '<h3>' + '<a href="#">Throwback Hip Bag</a>' + '</h3>' + '<p id="price' + cartitemid + '" class="cartitemprice ml-4">$' + item.price + '.00</p>' + '</div>' + '<p id="name' + cartitemid + '" class="cartitemname mt-1 text-sm text-gray-500">' + item.name + '</p>' + '<p id="tag' + cartitemid + '" class="cartitemtag mt-1 text-sm text-gray-500">' + item.tag + '</p>' + '</div>' + '<div class="flex flex-1 items-end justify-between text-sm">' + '<p id="quantity' + cartitemid + '" class=" cartitemquantity text-gray-500">' + item.inCart + '</p>' + '<div id="removediv' + cartitemid + '" class="flex">' + '</div>' + '</div>' + '</div>' + '</li>';
+        var btnid = "removebtn" + count; //console.log("id of remove btn=",btnid);
+
+        var button = document.createElement('button');
+        button.setAttribute('id', btnid);
+        button.setAttribute('class', 'text-indigo-600');
+        button.classList.add('hover:text-indigo-500');
+        button.classList.add('font-medium');
+        button.textContent = 'Remove';
+        document.getElementById("removediv" + cartitemid).appendChild(button);
+        count = count + 1;
+      }
+    });
+    var btncount = 0;
+
+    for (var key in cartItems) {
+      if (cartItems.hasOwnProperty(key)) {
+        (function () {
+          // alert(cartItems[key].name);
+          // alert(cartItems[key].price);
+          var listid = "listitem-" + btncount; // console.log("listid for remove btn=",listid);
+
+          document.getElementById("removebtn" + btncount).addEventListener('click', function () {
+            var cartitemlist = document.getElementById(listid);
+            removecartitem(cartitemlist);
+          });
+        })();
+      } //console.log("btncount=",btncount);
+
+
+      btncount = btncount + 1;
+    }
+
+    totalprice.innerText = carttotalcost.toString();
+  }
+}
 })();
 
 /******/ })()
