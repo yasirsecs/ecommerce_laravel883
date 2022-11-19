@@ -3310,6 +3310,10 @@ body {
     order: 1;
   }
 
+  .lg\:order-2 {
+    order: 2;
+  }
+
   .lg\:col-start-1 {
     grid-column-start: 1;
   }
