@@ -69,5 +69,12 @@ Route::get('/checkout2', function () {
     return view('checkout2');
 });
 
+Route::get('/checkout3', function () {
+    return view('checkout3');
+});
+
 Route::get('checkout',[CheckoutController::class, 'checkout']);
 Route::post('checkout','App\Http\Controllers\CheckoutController@afterpayment')->name('checkout.credit-card');
+
+//Route::post('checkout1',[CheckoutController::class, 'afterpayment']);
+
