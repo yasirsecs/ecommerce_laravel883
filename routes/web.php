@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StripePaymentController;
+use App\Http\Controllers\CheckoutController;
+
 
 
 Route::get('/', function () {
@@ -59,9 +62,12 @@ Route::get('/yasir', function () {
 Route::get('/paymenttest', function () {
     return view('paymenttest');
 });
-Route::get('/checkout', function () {
+ Route::get('/checkout1', function () {
     return view('checkout');
-});
+}); 
 Route::get('/checkout2', function () {
     return view('checkout2');
 });
+
+Route::get('checkout',[CheckoutController::class, 'checkout']);
+Route::post('checkout','App\Http\Controllers\CheckoutController@afterpayment')->name('checkout.credit-card');
