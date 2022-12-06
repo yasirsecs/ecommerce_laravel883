@@ -58,6 +58,9 @@ Route::get('/amirlanding', function () {
 Route::get('/yasir', function () {
     return view('yasir');
 });
+Route::post('/yasir', function () {
+    return view('yasir');
+});
 
 Route::get('/paymenttest', function () {
     return view('paymenttest');
@@ -72,9 +75,13 @@ Route::get('/checkout2', function () {
 Route::get('/checkout3', function () {
     return view('checkout3');
 });
+Route::get('/cart', function () {
+    return view('layouts.cart');
+});
 
 Route::get('checkout',[CheckoutController::class, 'checkout']);
-Route::post('checkout','App\Http\Controllers\CheckoutController@afterpayment')->name('checkout.credit-card');
+Route::post('checkout','App\Http\Controllers\CheckoutController@afterPayment')->name('checkout.credit-card');
+Route::post('checkout2','App\Http\Controllers\CheckoutController@checkout')->name('checkout.credit-card2');
 
-//Route::post('checkout1',[CheckoutController::class, 'afterpayment']);
+//Route::post('checkout',[CheckoutController::class, 'checkout']);
 

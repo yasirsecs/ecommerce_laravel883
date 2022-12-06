@@ -41,7 +41,8 @@
                     </button>
                   </div>
                 </div>
-          <form action="{{route('checkout.credit-card')}}"  method="post" id="payment-form">
+          <form action="{{route('checkout.credit-card2')}}"  method="post" id="payment-form">
+            @csrf 
                 <div  class="mt-8">
                   <div class="flow-root">
                     <ul role="list" class="cart-item-list -my-6 divide-y divide-gray-200">
