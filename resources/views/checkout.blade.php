@@ -177,14 +177,7 @@ tfoot {
                           <input type="hidden" name="plan" value="" />
                       </div>
                   </div>
-                  <div class="card-footer">
-                    <button
-                    id="card-button"
-                    class="btn btn-dark"
-                    type="submit"
-                    data-secret="{{ $intent }}"
-                    > Pay </button>
-                </div>
+                 
                 <!-- end of code from stripe-->
  
                   </fieldset>
@@ -207,7 +200,7 @@ tfoot {
                   <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your address for delivery..."></textarea>
                 </div>
                 <div class="buy1 ">
-                  <button id="buybtn" type="submit" class=" text-white w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm   px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Buy</button>
+                  <button id="card-button" type="submit" data-secret="{{ $intent }}" class=" text-white w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm   px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Buy</button>
                 </div>
                 </div>
               <div class="order-1 lg:order-2 right w-full lg:w-1/2 px-5">
@@ -323,7 +316,7 @@ tfoot {
                          
                          form.addEventListener('submit', function(event) {
                              event.preventDefault();
-                             
+                             console.log("In function form.addeventlistener");
                              stripe.handleCardPayment(clientSecret, cardElement, {
                                  payment_method_data: {
                                     // billing_details: { name: cardHolderName.value }
