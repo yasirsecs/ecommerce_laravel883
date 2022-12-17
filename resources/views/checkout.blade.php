@@ -172,6 +172,15 @@ tfoot {
                           <div id="card-element">
                               <!-- A Stripe Element will be inserted here. -->
                           </div>
+                          <div id="card-number">
+                            <!-- A Stripe Element will be inserted here. -->
+                          </div>
+                          <div id="card-cardExpiry">
+                            <!-- A Stripe Element will be inserted here. -->
+                          </div>
+                          <div id="card-cardCvc">
+                            <!-- A Stripe Element will be inserted here. -->
+                          </div>
                           <!-- Used to display form errors. -->
                           <div id="card-errors" role="alert"></div>
                           <input type="hidden" name="plan" value="" />
@@ -200,6 +209,7 @@ tfoot {
                   <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your address for delivery..."></textarea>
                 </div>
                 <div class="buy1 ">
+                  <input  type="text" name="secret_id" value="{{ $cust_id }}">
                   <button id="card-button" type="submit" data-secret="{{ $intent }}" class=" text-white w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm   px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Buy</button>
                 </div>
                 </div>
@@ -226,7 +236,7 @@ tfoot {
                         <p id="quantityitemcart" class="text-gray-500">quantity</p>
 
                         <div class="flex">
-                          <button id="removeitemcart" type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
+                          <button id="removeitemcart1" type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
                         </div>
                         
                       </div>
@@ -296,20 +306,26 @@ tfoot {
                         const stripe = Stripe('pk_test_51LYYEIIBnJVnbiVxnjCoS0zFLgYsTaV6J12HjM0fufWUxMjOtvNtWXkV4SftpiD2abWWcFXnlqowF6D01m1npuDA00LgqpHJPg', { locale: 'en' }); // Create a Stripe client.sk_test_51LYYEIIBnJVnbiVxXXHE1HgLakPATdcQUA1RlH4O459iwpV00Qbn5OLcy5NI4gM4kOG6YKAzg3aeqTMIdGniP64K00Flpkr3rK
                          const elements = stripe.elements(); // Create an instance of Elements.
                          const cardElement = elements.create('card', { style: style }); // Create an instance of the card Element.
+                         /* var cardNumberElement = elements.create('cardNumber', { style: style });
+                         var cardExpiryElement = elements.create('cardExpiry', { style: style });
+                         var cardCvcElement = elements.create('cardCvc', ); */
                          const cardButton = document.getElementById('card-button');
                          const clientSecret = cardButton.dataset.secret;
                          
                          cardElement.mount('#card-element'); // Add an instance of the card Element into the `card-element` <div>.
+                          /* cardNumberElement.mount('#card-number');//testing
+                          cardExpiryElement.mount('#card-cardExpiry');//testing
+                          cardCvcElement.mount('#card-cardCvc');//testing */
                          
                          // Handle real-time validation errors from the card Element.
-                         cardElement.addEventListener('change', function(event) {
+                        cardElement.addEventListener('change', function(event) {
                              var displayError = document.getElementById('card-errors');
                              if (event.error) {
                                  displayError.textContent = event.error.message;
                              } else {
                                  displayError.textContent = '';
                              }
-                         });
+                         }); 
                          
                          // Handle form submission.
                          var form = document.getElementById('payment-form');

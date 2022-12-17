@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 
 class CheckoutController extends Controller
 {
-    public function checkout()
-    { echo "in checkout function";  
+    public function checkout(Request $request)
+    { 
+        $name = $request->input('name'); 
         // Enter Your Stripe Secret
         \Stripe\Stripe::setApiKey('sk_test_51LYYEIIBnJVnbiVxXXHE1HgLakPATdcQUA1RlH4O459iwpV00Qbn5OLcy5NI4gM4kOG6YKAzg3aeqTMIdGniP64K00Flpkr3rK');
 
@@ -21,43 +22,28 @@ class CheckoutController extends Controller
 			'currency' => 'AED',
 			'description' => 'Payment From All About Laravel',
 			'payment_method_types' => ['card'],
+            'receipt_email'=>'yasir.arfatse@gmail.com',           
+            
 		]);
 		$intent = $payment_intent->client_secret;
-        print_r($intent);
+        $cust_id = $payment_intent->id;
+        //print_r($intent2);
 		//return view('checkout.credit-card',compact('intent'));
         //$intent='baboooo';
-        return view('checkout',compact('intent'));
-
-    }
-
-    public function checkout4()
-    { echo "in checkout function";  
-        // Enter Your Stripe Secret
-        \Stripe\Stripe::setApiKey('sk_test_51LYYEIIBnJVnbiVxXXHE1HgLakPATdcQUA1RlH4O459iwpV00Qbn5OLcy5NI4gM4kOG6YKAzg3aeqTMIdGniP64K00Flpkr3rK');
-
-        $amount = 100;
-		$amount *= 100;
-        $amount = (int) $amount;
-        
-        $payment_intent = \Stripe\PaymentIntent::create([
-			'description' => 'Stripe Test Payment',
-			'amount' => $amount,
-			'currency' => 'AED',
-			'description' => 'Payment From All About Laravel',
-			'payment_method_types' => ['card'],
-		]);
-		$intent = $payment_intent->client_secret;
-        print_r($intent);
-		//return view('checkout.credit-card',compact('intent'));
-        //$intent='baboooo';
-        return view('checkout4',compact('intent'));
+        return view('checkout',compact('intent'),compact('cust_id'));
 
     }
 
 
-    public function afterPayment()
+    public function afterPayment(Request $request)
     {
-        echo 'Payment Received, Thanks you for using our services.';
+        $amount=100;
+        $secret = $request->input('secret_id');
+        print_r($secret);
+        $stripe->paymentIntents->update(
+            $secret,
+            ['metadata' => ['order_id' => '6735']],
+          );
     }
 }
 
