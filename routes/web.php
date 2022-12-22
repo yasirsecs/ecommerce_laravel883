@@ -78,6 +78,9 @@ Route::get('/checkout3', function () {
 Route::get('/cart', function () {
     return view('layouts.cart');
 });
+Route::get('/success', function () {
+    return view('success');
+});
 
 Route::get('checkout',[CheckoutController::class, 'checkout']);
 Route::post('checkout','App\Http\Controllers\CheckoutController@afterPayment')->name('checkout.credit-card');
