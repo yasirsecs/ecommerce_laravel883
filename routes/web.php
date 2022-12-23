@@ -86,7 +86,9 @@ Route::get('checkout',[CheckoutController::class, 'checkout']);
 Route::post('checkout','App\Http\Controllers\CheckoutController@afterPayment')->name('checkout.credit-card');
 Route::post('checkout2','App\Http\Controllers\CheckoutController@checkout')->name('checkout.credit-card2');
 
-Route::get('checkout4',[CheckoutController::class, 'checkout4']);
+Route::get('testurl',[CheckoutController::class, 'testurl']);
 
 //Route::post('checkout',[CheckoutController::class, 'checkout']);
+
+Route::post('/checkout3',[CheckoutController::class,'checkout']);
 

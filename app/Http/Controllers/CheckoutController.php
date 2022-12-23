@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class CheckoutController extends Controller
 {
     public function checkout(Request $request)
     { 
+    
         $name = $request->input('name');
         // Enter Your Stripe Secret
       \Stripe\Stripe::setApiKey('sk_test_51LYYEIIBnJVnbiVxXXHE1HgLakPATdcQUA1RlH4O459iwpV00Qbn5OLcy5NI4gM4kOG6YKAzg3aeqTMIdGniP64K00Flpkr3rK');
@@ -27,7 +29,7 @@ class CheckoutController extends Controller
 		]);
 		$intent = $payment_intent->client_secret;
         $cust_id = $payment_intent->id; 
-        //print_r($intent2);
+        print_r($intent);
 		//return view('checkout.credit-card',compact('intent'));
         //$intent='baboooo';
         // $stripe = new \Stripe\StripeClient(
@@ -46,6 +48,15 @@ class CheckoutController extends Controller
         return view('checkout',compact('intent'),compact('cust_id'));
 
     }
+
+    public function testurl()
+    { 
+        $response = Http::get('api.stripe.com');
+        echo $response;
+        return view('success');
+    }
+
+
 
 
     public function afterPayment(Request $request)
@@ -66,6 +77,7 @@ class CheckoutController extends Controller
         //print_r($update);
         return view('success');
     }
+
 }
 
 
