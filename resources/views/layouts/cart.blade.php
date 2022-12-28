@@ -41,39 +41,11 @@
                     </button>
                   </div>
                 </div>
-  
+          <form action="{{route('checkout.credit-card2')}}"  method="post" id="payment-form1">
+            @csrf 
                 <div  class="mt-8">
                   <div class="flow-root">
                     <ul role="list" class="cart-item-list -my-6 divide-y divide-gray-200">
-                      {{-- <li id="cartitemnumber-0" class="cartitemnumber-0 flex py-6">
-                        <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                          <img id="imagincart" src="" alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." class="h-full w-full object-cover object-center">
-                        </div>
-  
-                        <div class="ml-4 flex flex-1 flex-col">
-                          <div>
-                            <div class="flex justify-between text-base font-medium text-gray-900">
-                              <h3>
-                                <a id="nameitemcart"href="#">name of item</a>
-                              </h3>
-                              <p id="priceitemcart" class="ml-4">price</p>
-                            </div>
-                            <p id="detailitemcart" class="mt-1 text-sm text-gray-500">Once you take a few strides in the Nike Air Zoom Alphafly NEXT% 2, you'll never look at your favourite pair of old racing shoes the same way again.
-  
-                              womenrunner</p>
-                          </div>
-                          <div class="flex flex-1 items-end justify-between text-sm">
-                            <p id="quantityitemcart" class="text-gray-500">quantity</p>
-  
-                            <div class="flex">
-                              <button id="removeitemcart" type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
-                            </div>
-                          </div>
-                        </div>
-                      </li> --}}
-  
-                      
-  
                       
                       <!-- More products... -->
                     </ul>
@@ -88,10 +60,12 @@
                 </div>
                 <p class="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                 <div class="mt-6">
-                  <a href="{{asset('checkout')}}" class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Checkout</a>
-                </div>
+                {{--   <a href="{{asset('checkout')}}" class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Checkout</a>
+                 --}}</div>
                 <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
                   <p>
+                <button type="submit" class=" text-white w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm   px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Payment</button>
+          </form>
                     or
                     <button type="button" class="font-medium text-indigo-600 hover:text-indigo-500">
                       Continue Shopping<a href="{{asset('pcard6')}}" ></a>

@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StripePaymentController;
+use App\Http\Controllers\CheckoutController;
+
 
 
 Route::get('/', function () {
@@ -55,13 +58,37 @@ Route::get('/amirlanding', function () {
 Route::get('/yasir', function () {
     return view('yasir');
 });
+Route::post('/yasir', function () {
+    return view('yasir');
+});
 
 Route::get('/paymenttest', function () {
     return view('paymenttest');
 });
-Route::get('/checkout', function () {
+ Route::get('/checkout1', function () {
     return view('checkout');
-});
+}); 
 Route::get('/checkout2', function () {
     return view('checkout2');
 });
+
+Route::get('/checkout3', function () {
+    return view('checkout3');
+});
+Route::get('/cart', function () {
+    return view('layouts.cart');
+});
+Route::get('/success', function () {
+    return view('success');
+});
+
+Route::get('checkout',[CheckoutController::class, 'checkout']);
+Route::post('checkout','App\Http\Controllers\CheckoutController@afterPayment')->name('checkout.credit-card');
+Route::post('checkout2','App\Http\Controllers\CheckoutController@checkout')->name('checkout.credit-card2');
+
+Route::get('testurl',[CheckoutController::class, 'testurl']);
+
+//Route::post('checkout',[CheckoutController::class, 'checkout']);
+
+Route::post('/checkout3',[CheckoutController::class,'checkout']);
+
