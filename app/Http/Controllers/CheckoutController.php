@@ -29,7 +29,7 @@ class CheckoutController extends Controller
 		]);
 		$intent = $payment_intent->client_secret;
         $cust_id = $payment_intent->id; 
-        print_r($intent);
+        //print_r($intent);
 		//return view('checkout.credit-card',compact('intent'));
         //$intent='baboooo';
         // $stripe = new \Stripe\StripeClient(
@@ -51,8 +51,35 @@ class CheckoutController extends Controller
 
     public function testurl()
     { 
-        $response = Http::get('api.stripe.com');
-        echo $response;
+        // $myArr = array("John", "Mary", "Peter", "Sally");
+        // $myJSON = json_encode($myArr);
+        // echo $myJSON;
+        echo "from test url function";
+        try
+        {
+        $cURLConnection = curl_init();
+
+       // curl_setopt($cURLConnection, CURLOPT_URL, 'https://hostname.tld/phone-list');
+        curl_setopt($cURLConnection, CURLOPT_URL, 'http://yasirse.com/index3.php');
+        curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
+
+        $phoneList = curl_exec($cURLConnection);
+        curl_close($cURLConnection);
+
+         $jsonArrayResponse = json_decode($phoneList);
+         echo $phoneList;
+    } catch (\Exception $e) {
+         return $e->getMessage();
+        }
+    // $response = Http::get('api.stripe.com:80');
+    // echo $response;
+    //error_reporting(E_ALL);
+    //$response = Http::get('api.stripe.com:443');
+    //    $response = Http::get('api.stripe.com', [
+    //     'description' => 'Stripe Test Payment',
+    //     'amount' => $amount,
+    // ]);
+        //echo $response;
         return view('success');
     }
 
