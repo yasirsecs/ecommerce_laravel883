@@ -87,7 +87,11 @@ Route::post('checkout','App\Http\Controllers\CheckoutController@afterPayment')->
 Route::post('checkout2','App\Http\Controllers\CheckoutController@checkout')->name('checkout.credit-card2');
 
 Route::get('testurl',[CheckoutController::class, 'testurl']);
-Route::get('sub',[CheckoutController::class, 'subscription']);
+Route::post('sub',[Subscription::class, 'subscription'])->name('subscription.sub1');
+Route::get('/sub', function () {
+    return view('subscription');
+});
+
 
 
 //Route::post('checkout',[CheckoutController::class, 'checkout']);
