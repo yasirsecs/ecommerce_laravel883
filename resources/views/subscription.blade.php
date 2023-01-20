@@ -156,8 +156,10 @@ tfoot {
             </div>
            
             <div class="container mx-auto lg:px-10 " >
-              {{-- {{route('sub')}} --}}
-              <form action="{{route('subscription.sub1')}}"  method="post" id="payment-form">
+              {{-- {{route('sub')}} 
+              subscription.subr
+              --}}
+              <form action="{{route('subscription.subr')}}"  method="post" id="payment-form">
                 <div class="lg:px-10  flex item-center flex-col lg:flex-row p-5 lg:p-10 border border-blue-200 rounded" >
                 <div class="order-2 lg:order-1 left w-full lg:w-1/2 px-5">
                   <fieldset>
@@ -329,7 +331,7 @@ tfoot {
                               else
                               {//send token to your server
                                 stripetokenhandler(result.token);
-                                form.submit();
+                                
                               }
                              });
                             });
@@ -342,6 +344,8 @@ tfoot {
                             hiddenInput.setAttribute('name','stripetoken');
                             hiddenInput.setAttribute('value',token.id);
                             form.appendChild(hiddenInput);
+                            console.log('after creating stripetoken inputbox ')
+                            form.submit();
                           };
                    
                </script> 
