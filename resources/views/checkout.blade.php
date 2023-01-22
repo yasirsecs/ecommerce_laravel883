@@ -193,14 +193,14 @@ tfoot {
                     <div id="card-errors" role="alert"></div>
                           <input type="hidden" name="plan" value="" />
                    </div>
-                   <div class="mb-6">
+                   {{-- <div class="mb-6">
                     <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Enter your card detail</label>
                     <div id="payment-element">
                       <!-- A Stripe Element will be inserted here. -->
                     </div>
                     <div id="card-errors" role="alert"></div>
                           <input type="hidden" name="plan" value="" />
-                   </div>
+                   </div> --}}
                 <div class="mb-6">
                   <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your email</label>
                   <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@flowbite.com" required="">
@@ -317,18 +317,18 @@ tfoot {
                          
                         const stripe = Stripe('pk_test_51LYYEIIBnJVnbiVxnjCoS0zFLgYsTaV6J12HjM0fufWUxMjOtvNtWXkV4SftpiD2abWWcFXnlqowF6D01m1npuDA00LgqpHJPg', { locale: 'en' }); // Create a Stripe client.sk_test_51LYYEIIBnJVnbiVxXXHE1HgLakPATdcQUA1RlH4O459iwpV00Qbn5OLcy5NI4gM4kOG6YKAzg3aeqTMIdGniP64K00Flpkr3rK
                          const elements = stripe.elements(); // Create an instance of Elements.
-                        // const cardElement = elements.create('card', { style: style }); // Create an instance of the card Element.
-                         var paymentElement = elements.create('payment');
+                         const cardElement = elements.create('card', { style: style }); // Create an instance of the card Element.
+                         //var paymentElement = elements.create('payment');
                          /* var cardNumberElement = elements.create('cardNumber', { style: style });
                          var cardExpiryElement = elements.create('cardExpiry', { style: style });
                          var cardCvcElement = elements.create('cardCvc', ); */
                          const cardButton = document.getElementById('card-button');
                          const clientSecret = cardButton.dataset.secret;
                          
-                        // cardElement.mount('#card-element'); // Add an instance of the card Element into the `card-element` <div>.
-                         paymentElement.mount('#payment-element'); // Add an instance of the card Element into the `card-element` <div>.
+                         cardElement.mount('#card-element'); // Add an instance of the card Element into the `card-element` <div>.
+                         //paymentElement.mount('#payment-element'); // Add an instance of the card Element into the `card-element` <div>.
                           
-                          /* cardNumberElement.mount('#card-number');//testing
+                          /*cardNumberElement.mount('#card-number');//testing
                           cardExpiryElement.mount('#card-cardExpiry');//testing
                           cardCvcElement.mount('#card-cardCvc');//testing */
                          

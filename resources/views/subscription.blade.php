@@ -205,77 +205,24 @@ tfoot {
                 <div class="buy1 ">
                   {{-- <input hidden  type="text" name="secret_id" value="{{ $cust_id }}">
                   <input hidden  type="text" name="paybtn" value="{{ $intent }}"> --}}
-                  <button id="card-button" type="submit"  name="paybtn" class=" text-white w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm   px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Buy</button>
+                  <button id="card-button" type="submit"  name="paybtn" class=" text-white w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm   px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Subscribe Now</button>
                 </div>
                 </div>
               <div class="order-1 lg:order-2 right w-full lg:w-1/2 px-5">
-                <ul role="list" class="cart-item-list -my-6 divide-y divide-gray-200">
-                  <li id="cartitemnumber-0" class="cartitemnumber-0 flex py-6">
-                    <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                      <img id="imagincart" src="{{asset("")}}" alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." class="h-full w-full object-cover object-center">
-                    </div>
-
-                    <div class="ml-4 flex flex-1 flex-col">
-                      <div>
-                        <div class="flex justify-between text-base font-medium text-gray-900">
-                          <h3>
-                            <a id="nameitemcart" href="#">name of item</a>
-                          </h3>
-                          <p id="priceitemcart"  class="ml-4">price</p>
-                        </div>
-                        <p id="detailitemcart" class="mt-1 text-sm text-gray-500">nike shoes detail
-
-                          womenrunner</p>
-                      </div>
-                      <div class="flex flex-1 items-end justify-between text-sm">
-                        <p id="quantityitemcart" class="text-gray-500">quantity</p>
-
-                        <div class="flex">
-                          <button id="removeitemcart1" type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </li>
-                  <li id="cartitemnumber-0" class="cartitemnumber-0 flex py-6">
-                    <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                      <img id="imagincart" src="{{asset("")}}" alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." class="h-full w-full object-cover object-center">
-                    </div>
-
-                    <div class="ml-4 flex flex-1 flex-col">
-                      <div>
-                        <div class="flex justify-between text-base font-medium text-gray-900">
-                          <h3>
-                            <a id="nameitemcart"href="#">name of item</a>
-                          </h3>
-                          <p id="priceitemcart" class="ml-4">price</p>
-                        </div>
-                        <p id="detailitemcart" class="mt-1 text-sm text-gray-500">nike shoes detail
-
-                          womenrunner</p>
-                      </div>
-                      <div class="flex flex-1 items-end justify-between text-sm">
-                        <p id="quantityitemcart" class="text-gray-500">quantity</p>
-
-                        <div class="flex">
-                          <button id="removeitemcart" type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-                <div class="border-t border-gray-200 py-6 px-4 sm:px-6">
-                  <div class="flex justify-between text-base font-medium text-gray-900">
-                    <p>Subtotal</p>
-                    <p id="cart-price-total">$00.00</p>
-                  </div>
-                  <p class="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
+                <div class="first w-full lg:w-full h-full border border-blue-300 rounded-md bg-white mx-3 flex flex-col items-center py-7   ">
+                  <div class="Monthly price text-center p-2 text-blue-500  text-2xl font-bold "> Cloud LiteStarter</div>
+                  <div class="price text-center p-2 text-blue-500"><span>10$/month<span></div>
+                  <div class="cpu text-center p-2 text-blue-500 ">1 Core CPU</div>
+                  <div class="memory text-center p-2 text-blue-500 ">512 Memory</div>
+                  <div class="ssd text-center p-2 text-blue-500 ">30GB SSD</div>
+                  <div class="ip text-center p-2 text-blue-500 ">One IPv4 and IPv6</div>
+                  <div class="bandwidth text-center p-2 text-blue-500 ">One TBBandwidth</div>
+                  <div class="speed text-center p-2 text-blue-500 ">1 Gbps uplink </div>
+                  <div class="cpanel text-center p-2 text-blue-500 ">Free Cpanel/WHS</div>
+                  <a href="package" class="bg-blue-500 hover:bg-black text-white font-bold py-2 px-4 rounded">
+                    Change Package
+                  </a>
                 </div>
-                {{-- <button type="submit" class="visible sm:hidden text-white w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm   px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Buy Now</button>
-                  --}}               
-                
-                {{-- @include('layouts.cart-visible') --}}
               </div>
             </div>
             </form>
