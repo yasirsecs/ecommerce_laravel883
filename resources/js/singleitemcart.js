@@ -432,6 +432,7 @@ function displayCartcheckout()
                     //console.log("id of remove btn=",btnid);
                     const button = document.createElement('button');
                     button.setAttribute('id', btnid);
+                    button.setAttribute('type', 'button');
                     button.setAttribute('class', 'text-indigo-600');
                     button.classList.add('hover:text-indigo-500');
                     button.classList.add('font-medium');
